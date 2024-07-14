@@ -1,7 +1,7 @@
 <div class="footer" style="background-color:#fff">
     <div >
         <br>
-        <center><h4>กิจกรรม : การจัดทำหลักเตือนระดับน้ำท่วม</h4></center>
+        <center><h4>ระบบสารสนเทศเตรียมรับมือน้ำท่วม เขตตัวเมืองจังหวัดเชียงใหม่</h4></center>
         <table align="center" width=100%>
             <tr >
                <td width=50% align="right">

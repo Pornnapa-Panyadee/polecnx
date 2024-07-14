@@ -16,11 +16,28 @@
         position: relative;
     }
 </style>
-<nav class="navbar header-navbar pcoded-header" style="background-image: url(images/banner/head.png);">
+<!-- <nav class="navbar header-navbar pcoded-header" style="background-image: url(images/banner/head.png);">
     <div class="navbar-wrapper" >
         <div class="navbar-logo" > 
             <a href="{{ asset('/') }}">  
-            <h3 >หลักระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่ <h3></a>
+            <h3 >ระบบสารสนเทศเตรียมรับมือน้ำท่วม เขตตัวเมืองจังหวัดเชียงใหม่ <h3></a>
+             <a class="mobile-menu" id="mobile-collapse" href="#!">
+                    <i class="fa fa-reorder"></i>
+                </a>
+            
         </div>
+    </div>
+</nav> -->
+<nav class="navbar header-navbar pcoded-header" style="background-image: url(images/banner/head.png);">
+    <div class="navbar-wrapper">
+        <div class="navbar-logo"> 
+            <a href="{{ asset('/') }}">  <h3> ระบบสารสนเทศเตรียมรับมือน้ำท่วม เขตตัวเมืองจังหวัดเชียงใหม่ </h3> </a>
+           
+                <a class="mobile-menu" id="mobile-collapse" href="#!">
+                    <i class="fa fa-reorder"></i>
+                </a>
+            
+        </div>
+       
     </div>
 </nav>
