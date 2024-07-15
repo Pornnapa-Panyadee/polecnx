@@ -11,7 +11,7 @@ class PolelocationController extends Controller
     public function getDataHomeTable() {
         $data = PoleLocation::select('*')->get();
         // dd($pole[0]->pole_id);
-        return view('guest.index',compact('data'));      
+        return view('guest.pole',compact('data'));      
         
         
     }
