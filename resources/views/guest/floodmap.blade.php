@@ -18,7 +18,7 @@
   .cardmap {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    height: 350px;
+    height: 370px;
   }
 
   .cardmap:hover {
@@ -43,6 +43,11 @@
     font-size: 10px;
     /* margin: 5px; */
     padding:5px;
+  }
+  .text4{
+    font-size: 9px;
+    margin:10px;
+    margin-top:-20px;
   }
 
 </style>
@@ -197,7 +202,7 @@
                                   <div class="col-md-12 col-xl-6">
                                     <div class="cardmap">
                                       <p class="text">แผนที่แสดงพื้นที่เสี่ยงภัย 7 ระดับ</p>
-                                      <p class="text2">แผนที่เสี่ยงภัยน้ำท่วมแยกตามระดับความรุนแรง 7 ระดับนั้น ข้อมูลหลักที่นำมาใช้ในการวิเคราะห์และจัดทำแผนที่ คือ ข้อมูลขอบเขตพื้นที่น้ำท่วม 7 ระดับ และมีข้อมูลต่างๆ ที่ใช้ในการประกอบแผนที่ ได้แก่ เส้นทางน้ำ, หมุดระดับน้ำท่วม และข้อมูลภาพถ่ายทางอากาศ</p>
+                                      <p class="text2">แผนที่เสี่ยงภัยน้ำท่วมแยกตามระดับความรุนแรง 7 ระดับ ข้อมูลทีใช้ในการวิเคราะห์และจัดทำแผนที่ คือ ข้อมูลขอบเขตพื้นที่น้ำท่วม 7 ระดับ, เส้นทางน้ำ, ข้อมูลหลักระดับน้ำท่วม, ข้อมูลภาพถ่ายทางอากาศ และข้อมูลพื้นผิวดิน </p>
                                       <div class="row" > 
                                         <div class="col-md-3 col-xl-3">
                                           <center>
@@ -260,6 +265,8 @@
                                         </div>
                                       
                                       </div>
+                                      <p class="text4">หมายเหตุ: ตั้งแต่ พ.ศ. 2565 ได้มีการปรับปรุงสภาพลำน้ำปิงและสร้างคันดินข้างแม่น้ำปิงในเขตตัวเมือง จนสามารถป้องกันระดับน้ำท่วมได้มากขึ้น โดยน้ำจะเริ่มล้นตลิ่งเข้าท่วมพื้นที่โซนต่างๆเมื่อค่าระดับน้ำที่สถานีวัดน้ำ P.1 สะพานนวรัฐ มีค่ามากกว่า 4.20 เมตร</p>
+                                      
                                     </div>
 
                                   </div>
@@ -337,26 +344,9 @@
                                 
                                 <!-- row3 -->
                                 <div class="row" style="margin-top:20px">
-                                  <div class="col-md-12 col-xl-2">
-                                    <div class="cardmap">
-                                      <p class="text">แผนที่แสดงจุดที่ตั้งกองทราย</p>
-                                      <p class="text2">เป็นการวิเคราะห์ถึงความพอเพียงในการให้บริการของจุดที่ตั้งกระสอบทรายสำหรับใช้แจกจ่ายในสถานการณ์เกิดภัยน้ำท่วมเพื่อป้องกันคันน้ำไม่ให้ไหลบ่าเข้าท่วมพื้นที่ต้องมีการวางแผนเป้นอย่างดี </p>
-                                      <div class="row" style="margin-top:20px"> 
-                                        <div class="col-md-12 col-xl-12">
-                                          <center>
-                                            <a class="text3" href="{{ asset('images/flood/floodmap/8_MXD_Sand/MXD_Sand.jpg') }}" target="_blank"> 
-                                              <img  src="{{ asset('images/flood/floodmap/8_MXD_Sand/MXD_Sand.jpg') }}" style="width: 150px; height: 100px; object-fit: cover;" > 
-                                            </a>
-                                            <p class="text3">แผนที่แสดงจุดวางกองทรายและขอบเขตศักยภาพการให้บริการกองทราย
-                                             <br> <a class="text3" href="{{ asset('images/flood/floodmap/8_MXD_Sand/MXD_Sand.zip') }}" > Download : 6.7 MB/.zip </a>
-                                            </p>  
-                                          </center>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
+                                  
 
-                                  <div class="col-md-12 col-xl-2">
+                                  <div class="col-md-12 col-xl-3">
                                     <div class="cardmap">
                                       <p class="text">แผนที่แสดงขอบเขตน้ำท่วมปี 2554</p>
                                       <p class="text2">มีการออกแบบแผนที่โดยใช้ข้อมูลขอบเขตน้ำท่วมปี พ.ศ. 2554 ที่ได้ทำการปรับปรุงข้อมูลแล้ว มาวิเคราะห์ร่วมกับข้อมูลขอบเขตพื้นที่ท่วม 7 ระดับ เพื่อเปรียบเทียบและแสดงให้เห็นขอบเขตพื้นที่ที่น้ำท่วม </p>
@@ -375,7 +365,7 @@
                                     </div>
                                   </div>
 
-                                  <div class="col-md-12 col-xl-2">
+                                  <div class="col-md-12 col-xl-3">
                                     <div class="cardmap">
                                       <p class="text">แผนที่แสดงพื้นที่เสี่ยงภัย 7 ระดับในรูปแบบ 3 มิติ</p>
                                       <p class="text2">ข้อมูลภาพแสดงการขึ้นของน้ำท่วมตามลำดับทั้ง 7 พื้นที่ในรูปแบบ 3 มิติ โดยแสดงถึงพื้นที่และชุมชนที่จะได้รับผลกระทบจากน้ำในแต่ละลำดับ</p>
@@ -398,7 +388,7 @@
                                       <p class="text">แอนิเมชั่นการขึ้นลงของน้ำในพื้นที่เสี่ยงภัยน้ำท่วม</p>
                                       <p class="text2">ภาพแอนิเมชั่นแสดงการเพิ่มขึ้นของน้ำท่วมในพื้นที่เสี่ยงภัยทั้ง 7 ลำดับ โดยเป็นการประมาณการจากความสูงของระดับน้ำที่สถานีวัดน้ำ P.1 เชิงสะพานนวรัฐ และภาพแอนิเมชั่นการลดลงของน้ำโดยโดยใช้ข้อมูลที่ได้จากการสำรวจระดับน้ำท่วมในพื้นที่เมืองเชียงใหม่เมื่อปี 2554</p>
                                       <div class="row" style="margin-top:20px"> 
-                                        <div class="col-md-12 col-xl-4">
+                                        <div class="col-md-4 col-xl-4">
                                           <center>
                                             <a class="text3" href="{{ asset('images/flood/floodmap/13_flooding/Type1_rez.gif') }}" target="_blank"> 
                                               <img  src="{{ asset('images/flood/floodmap/13_flooding/Type1_rez.gif') }}" style="width: 150px; height: 100px; object-fit: cover;" > 
@@ -407,7 +397,7 @@
                                           </center>
                                         </div>
 
-                                        <div class="col-md-12 col-xl-4">
+                                        <div class="col-md-4 col-xl-4">
                                           <center>
                                             <a class="text3" href="{{ asset('images/flood/floodmap/13_flooding/Type2_rez.gif') }}" target="_blank"> 
                                               <img  src="{{ asset('images/flood/floodmap/13_flooding/Type2_rez.gif') }}" style="width: 150px; height: 100px; object-fit: cover;" > 
@@ -416,7 +406,7 @@
                                           </center>
                                         </div>
 
-                                        <div class="col-md-12 col-xl-4">
+                                        <div class="col-md-4 col-xl-4">
                                           <center>
                                             <a class="text3" href="{{ asset('images/flood/floodmap/13_flooding/Type2_rez.gif') }}" target="_blank"> 
                                               <img  src="{{ asset('images/flood/floodmap/13_flooding/Type2_rez.gif') }}" style="width: 150px; height: 100px; object-fit: cover;" > 

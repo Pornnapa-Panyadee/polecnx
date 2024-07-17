@@ -31,7 +31,7 @@
 <nav class="navbar header-navbar pcoded-header" style="background-image: url(images/banner/head.png);">
     <div class="navbar-wrapper">
         <div class="navbar-logo"> 
-            <a href="{{ asset('/') }}">  <h3> ระบบสารสนเทศเตรียมรับมือน้ำท่วม เขตตัวเมืองจังหวัดเชียงใหม่ </h3> </a>
+            <a href="{{ asset('/') }}">  <h3> ระบบเตรียมความพร้อมเพื่อรับมือภัยน้ำท่วมในพื้นที่เขตตัวเมืองเชียงใหม่</h3> </a>
            
                 <a class="mobile-menu" id="mobile-collapse" href="#!">
                     <i class="fa fa-reorder"></i>

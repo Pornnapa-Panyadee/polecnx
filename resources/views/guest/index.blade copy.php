@@ -42,14 +42,6 @@
         /* text-indent: 5em; */
         text-align:justify;
       }
-      .cardbox {
-        background-color: #1A76D1 ;
-        padding:20px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        border-radius: 5px;
-        /* height: 350px; */
-      }
     </style>
 
 
@@ -83,50 +75,41 @@
                           <div class="card table-card">
                             <div class="card-header" style="margin:20px">
                              
-                                  <h4>ระบบเตรียมความพร้อมเพื่อรับมือภัยน้ำท่วมในพื้นที่เขตตัวเมืองเชียงใหม่</h4>
+                                  <h4>ระบบเตรียมความพร้อมเพื่อรับมือภัยพิบัติน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</h4>
                                   <h4> <b><font style="color:#3d98ff; font-weight: bolder;"> CMFlood </font></b> : Chiang Mai City Flood Preparedness System</h4>
                                 <hr>
                                 <div class="row">
-                                  <div class="col-md-12 col-xl-12">
+                                  <div class="col-md-12 col-xl-9">
                                     <center><img  src="{{ asset('images/flood/city.jpg') }}" width=100% >
                                   </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-12 col-xl-6">
+                                  <div class="col-md-12 col-xl-3">
                                     <br>
-                                    <div class="cardbox">
-                                      <div class="Feautes">
-                                          <div class="single-features">
-                                            <a href="{{ asset('/pole') }}" target="_blank" >
-                                                <div class="signle-icon">
-                                                    <i class="icofont icofont-pencil-alt-3"></i>
-                                                </div>
-                                            </a>
-                                          </div>
-                                          <p style="margin-top: 80px; text-align: center; color: #fff;">ข้อมูลหลักระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p>
-                                      </div>
+                                    <div class="Feautes">
+                                        <div class="single-features">
+                                          <a href="{{ asset('/pole') }}" target="_blank" >
+                                              <div class="signle-icon">
+                                                  <i class="icofont icofont-pencil-alt-3"></i>
+                                              </div>
+                                          </a>
+                                        </div>
+                                        <p style="margin-top: 80px; text-align: center;">ข้อมูลหลักระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p>
                                     </div>
-                                  </div>
-                                  <div class="col-md-12 col-xl-6">
                                     <br>
-                                    <div class="cardbox">
-                                      <div class="Feautes">
-                                          <div class="single-features">
-                                            <a href="{{ asset('/floodmap') }}" target="_blank" >
-                                                <div class="signle-icon">
-                                                    <i class="icofont icofont-map"></i>
-                                                </div>
-                                            </a>
-                                          </div>
-                                          <p style="margin-top: 80px; text-align: center;color: #fff;">แผนที่เสี่ยงภัยน้ำท่วม (Flood Hazard Map)</p>
-                                      </div>
+                                    <div class="Feautes">
+                                        <div class="single-features">
+                                          <a href="{{ asset('/floodmap') }}" target="_blank" >
+                                              <div class="signle-icon">
+                                                  <i class="icofont icofont-map"></i>
+                                              </div>
+                                          </a>
+                                        </div>
+                                        <p style="margin-top: 80px; text-align: center;">แผนที่เสี่ยงภัยน้ำท่วม (Flood Hazard Map)</p>
                                     </div>
-                                    
                                   </div>
                                 </div>
                                 
                                 
-                                <!-- <div class="row" style="margin:20px">
+                                <div class="row" style="margin:20px">
                                   
                                   <div class="text-h">  หลักการและเหตุผล </div>
                                     <div class="text"> 
@@ -157,7 +140,7 @@
                                     
                                     </div> <br>
                                    
-                                </div> -->
+                                </div>
                                 
 
                                                           
