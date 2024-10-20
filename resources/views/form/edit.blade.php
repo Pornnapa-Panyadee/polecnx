@@ -93,45 +93,44 @@
                                  <div class="container mt-2" >
                                     
                                     <h3>หมุดน้ำท่วม 2567 (Flood Mark 2024)</h3>
-                                    <h4>  กรอกตำแหน่งและข้อมูลระดับน้ำท่วม</h4> 
+                                    <h4>หมายเลขหลัก {{$data[0]['code']}}</h4> 
                                     
                                     <hr></hr>
-
-                                    <form action="{{route('floodmark.add')}}" method="POST" enctype="multipart/form-data">
+                                    <h3> 	&#9830; แก้ไขข้อมูล </h3>
+                                    <form action="{{route('floodmark.update')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
+                                         <input type="hidden" name="code" id="code"  value="{{$data[0]['code']}}">
 
                                         <div class="text-h2">ตำแหน่งบริเวณน้ำท่วม</div>
                                         <div class="form-check mb-3">
                                           <div class="row" style="margin-left: 15px;" >
                                             <div class="col-md-12 col-xl-2">
-                                              <input class="text" type="radio" id="home" name="affected_area" value="บ้าน">
+                                              <input class="text" type="radio" id="home" name="affected_area" value="บ้าน" {{ $data[0]['affected_area'] == "บ้าน" ? 'checked' : '' }} >
                                               <label class="text" for="home">บ้าน/ที่อยู่อาศัย</label>
                                             </div>
                                             <div class="col-md-12 col-xl-3">
-                                              <input class="text" type="radio" id="residential" name="affected_area" value="สถานที่">
+                                              <input class="text" type="radio" id="residential" name="affected_area" value="สถานที่" {{ $data[0]['affected_area'] == "สถานที่" ? 'checked' : '' }}>
                                               <label class="text" for="residential">สำนัก/สถานที่สำคัญ</label>
                                             </div>
                                             <div class="col-md-12 col-xl-2">
-                                              <input class="text" type="radio" id="agricultural" name="affected_area" value="พื้นที่การเกษตร">
+                                              <input class="text" type="radio" id="agricultural" name="affected_area" value="พื้นที่การเกษตร" {{ $data[0]['affected_area'] == "พื้นที่การเกษตร" ? 'checked' : '' }} >
                                               <label class="text" for="agricultural">พื้นที่การเกษตร</label>
                                             </div>
                                             <div class="col-md-12 col-xl-1">
-                                              <input class="text" type="radio" id="road" name="affected_area" value="ถนน">
+                                              <input class="text" type="radio" id="road" name="affected_area" value="ถนน" {{ $data[0]['affected_area'] == "ถนน" ? 'checked' : '' }}>
                                               <label class="text" for="road">ถนน</label>
-                                              
                                             </div>
-                                            
                                             <div class="col-md-12 col-xl-4">
                                                 <div class="align-items-center">
-                                                    <input class="text" type="radio" id="other" name="affected_area" value="อื่นๆ">
+                                                    <input class="text" type="radio" id="other" name="affected_area" value="อื่นๆ" {{ $data[0]['affected_area'] == "อื่นๆ" ? 'checked' : '' }}>
                                                     <label class="text" for="other"> อื่นๆ </label>
-                                                    <input type="text"  class="text" id="other_detail" name="other_detail" placeholder="โปรดระบุ">
+                                                    <input type="text"  class="text" id="other_detail" name="other_detail" placeholder="โปรดระบุ" value="{{ $data[0]['other_detail'] }}">
                                                 </div>
                                             </div>
                                           </div>
                                           <div class="row" style="margin-left: 35px;" >
                                             <label for="road_number" class="form-label">กรอกข้อมูลตำแหน่งที่ตั้งอย่างละเอียด</label>
-                                            <input type="text" class="form-control" id="house_number" name="house_number" placeholder="ชื่อสถานที่ / บ้านเลขที่ ซอย หมู่บ้าน ตำบล  อำเภอ จังหวัด" required>
+                                            <input type="text" class="form-control" id="place_detail" name="place_detail" value=" {{$data[0]['place_detail']}}" placeholder="ชื่อสถานที่ / บ้านเลขที่ ซอย หมู่บ้าน ตำบล  อำเภอ จังหวัด" required>
                                           </div>
                                         </div>
                                         <!-- Location Input -->
@@ -139,7 +138,7 @@
                                         <!-- Location Input -->
                                         <div class="row">
                                           <div class="col-md-12 col-xl-8">
-                                            <input type="text" class="form-control" id="location" name="location" placeholder="กรอกพิกัด หรือ กดปุ่มเพื่อรับพิกัด หรือ เลือกพิกัดจากแผนที่" required>
+                                            <input type="text" class="form-control" id="location" name="location" placeholder="กรอกพิกัด หรือ กดปุ่มเพื่อรับพิกัด หรือ เลือกพิกัดจากแผนที่" value="{{$data[0]['latitude']}},{{$data[0]['longitude']}}"  required>
                                             
                                           </div>
                                           <div class="col-md-12 col-xl-4">
@@ -147,8 +146,8 @@
                                           </div>
                                         </div>
                                         <!-- Hidden inputs to store latitude and longitude -->
-                                        <input type="hidden" id="latitude" name="latitude">
-                                        <input type="hidden" id="longitude" name="longitude">
+                                        <input type="hidden" id="latitude" name="latitude" value="{{$data[0]['latitude']}}">
+                                        <input type="hidden" id="longitude" name="longitude" value="{{$data[0]['longitude']}}">
                                         <!-- Map to Show Location -->
                                         <div class="row">
                                             <div class="col-md-12 col-xl-12">
@@ -160,7 +159,7 @@
                                         <div class="text-h2">สถานที่ใกล้เคียง / สถานที่สำคัญ</div>
                                         <div class="row">
                                           <div class="col-md-12 col-xl-12">
-                                            <input type="text" class="form-control" id="place" name="place" placeholder="กรอกสถานที่ใกล้เคียง / สถานที่สำคัญ" >
+                                            <input type="text" class="form-control" id="place_around" name="place_around" placeholder="กรอกสถานที่ใกล้เคียง / สถานที่สำคัญ" value="{{$data[0]['place_around']}}" >
                                           </div>
                                         </div>
 
@@ -168,7 +167,7 @@
                                         <div class="text-h2">ระดับน้ำท่วม (เซนติเมตร)</div>
                                         <div class="row">
                                           <div class="col-md-12 col-xl-12">
-                                            <input type="number" class="form-control" id="water_level" name="water_level" placeholder="กรอกระดับน้ำท่วม (หน่วย: เซนติเมตร)" required>
+                                            <input type="number" class="form-control" id="water_level" name="water_level" placeholder="กรอกระดับน้ำท่วม (หน่วย: เซนติเมตร)" value="{{$data[0]['water_level']}}" required>
                                           </div>
                                         </div>
 
@@ -176,40 +175,38 @@
                                         <div class="text-h2">โครงสร้างที่ทำเครื่องหมาย</div>
                                         <!-- <div class="row">
                                           <div class="col-md-12 col-xl-12">
-                                            <input type="text" class="form-control" id="tool" name="tool" placeholder="กรอกโครงสร้างที่ทำเครื่องหมาย" required>
+                                            <input type="text" class="form-control" id="tool" name="tool" placeholder="กรอกโครงสร้างที่ทำเครื่องหมาย"  value="{{$data[0]['tool']}}"  required>
                                           </div>
                                         </div> -->
-                                          <div class="form-check mb-3">
+                                        <div class="form-check mb-3">
                                             <div class="row" >
                                               <div class="col-md-12 col-xl-2">
-                                                <input class="text" type="radio" id="wall" name="tool" value="กำแพง/รั้ว">
+                                                <input class="text" type="radio" id="wall" name="tool" value="กำแพง/รั้ว" {{ $data[0]['tool'] == "กำแพง/รั้ว" ? 'checked' : '' }}>
                                                 <label class="text" for="wall">กำแพง/รั้ว</label>
                                               </div>
                                               <div class="col-md-12 col-xl-2">
-                                                <input class="text" type="radio" id="pole" name="tool" value="เสาไฟ">
+                                                <input class="text" type="radio" id="pole" name="tool" value="เสาไฟ" {{ $data[0]['tool'] == "เสาไฟ" ? 'checked' : '' }}>
                                                 <label class="text" for="pole">เสาไฟ</label>
                                               </div>
                                               <div class="col-md-12 col-xl-2">
-                                                <input class="text" type="radio" id="bridge" name="tool" value="หัวสะพาน">
+                                                <input class="text" type="radio" id="bridge" name="tool" value="หัวสะพาน" {{ $data[0]['tool'] == "หัวสะพาน" ? 'checked' : '' }}>
                                                 <label class="text" for="bridge">หัวสะพาน</label>
                                               </div>                                              
                                               <div class="col-md-12 col-xl-4">
                                                   <div class="align-items-center">
-                                                      <input class="text" type="radio" id="tool_other" name="tool" value="อื่นๆ">
+                                                      <input class="text" type="radio" id="tool_other" name="tool" value="อื่นๆ" {{ $data[0]['tool'] == "อื่นๆ" ? 'checked' : '' }}>
                                                       <label class="text" for="tool_other"> อื่นๆ </label>
-                                                      <input type="text"  class="text" id="tool_detail" name="tool_detail" placeholder="โปรดระบุ">
+                                                      <input type="text"  class="text" id="tool_detail" name="tool_detail" placeholder="โปรดระบุ" value="{{ $data[0]['tool_detail']}}" >
                                                   </div>
                                               </div>
                                             </div>
                                           </div>
 
-
-
-                                        <div class="text-h2">อัพโหลดรูปภาพ (สามารถอัพโหลดมากกว่า 1 รูป)</div>
+                                        <div class="text-h2">อัพโหลดรูปภาพเพิ่ม (สามารถอัพโหลดมากกว่า 1 รูป)</div>
                                         <!-- File Input for Image -->
                                         <div class="row">
                                           <div class="col-md-12 col-xl-12">
-                                            <input type="file" class="form-control" id="image" name="image[]" accept="image/*" capture="camera" multiple required>
+                                            <input type="file" class="form-control" id="image" name="image[]" accept="image/*" capture="camera" multiple>
                                           </div>
                                         </div>
 
@@ -220,21 +217,38 @@
                                         <div class="text-h2">หมายเหตุ </div>
                                         <div class="row">
                                           <div class="col-md-12 col-xl-12">
-                                            <textarea class="form-control" id="note" name="note" rows="4" placeholder="กรอกหมายเหตุเพิ่มเติม"></textarea>
+                                            <textarea class="form-control" id="note" name="note" rows="4" placeholder="กรอกหมายเหตุเพิ่มเติม" value=" {{$data[0]['note']}}" ></textarea>
                                           </div>
                                         </div>
-
-                                        
-
                                         <!-- Submit Button -->
-                                        <br><BR>
+                                        <br>
                                         <div class="row" >
                                           <div class="col-md-12 col-xl-12">
-                                            <button type="submit" class="btn btn-primary text">Submit</button>
+                                            <button type="submit" class="btn btn-primary text">อัปเดตข้อมูล</button>
                                           </div>
                                         </div>
                                         
                                     </form>
+
+
+                                    <br>
+                                    <h3> 	&#9830;แก้ไข/ลบ รูปภาพ </h3>
+                                        <!-- File Input for Image -->
+                                         <div class="row">
+                                            @foreach ($image as $image)
+                                                <div class="col-md-3 position-relative">
+                                                    <img src="{{ asset($image->image_path) }}" alt="รูปภาพ" class="img-thumbnail" style="width: 100%; height: auto;">
+                                                    
+                                                    <a href='{{ asset('/photoremove') }}/{{$image->id}}'  > 
+                                                        <button class="btn waves-effect " onclick="myFunction()" title="delete">
+                                                        <i class="feather icon-trash-2"> ลบ</i>
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <br>
+
                                 </div>
                                
                                                           
@@ -271,7 +285,11 @@
   <script src="{{ asset('js/form/script.js')}}"></script>
   <script async  src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     
-  
+  <script>
+      function myFunction() {
+        confirm("คุณต้องการลบรูปฝายใช่ไหม?");
+      }
+  </script>
   <!-- Leaflet JS -->
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 

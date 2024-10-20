@@ -24,7 +24,7 @@
 
     <!-- leaflet -->
     
-    <link rel="stylesheet" href="{{ asset('css/form/leaflet.css')}}" crossorigin=""/>
+    <link rel="stylesheet" href="{{ asset('css/form/leaflet1.css')}}" crossorigin=""/>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
 
@@ -98,8 +98,10 @@
             align-items: center;
           }
       }
-     </style>
-
+    .topnav-right {
+      float: right;
+      font-size: 20px;
+    }
     </style>
 
 
@@ -128,7 +130,12 @@
                 <div class="main-body" style="margin-top:20px">
                   <div class="page-wrapper">
                     <div class="page-body">
-                      
+                      <!-- Map Show -->
+                        <div class="card-block p-b-0">
+                          <div id="map" style="border-style: groove;"></div>
+                           <br>
+                        </div>
+                      <!-- End Map show -->
                       
                        <!-- table -->
                       <div class="card">
@@ -139,6 +146,11 @@
                               <!-- choose Amp -->
                                 
                               <br>
+                              <div class="topnav-right ">
+                                  <p align="right">
+                                    <a href="{{ url('/flood24/form')}}"><button class="btn btn-primary">กรอกข้อมูลหมุดน้ำท่วมเพิ่ม</button></a>
+                                  </p>
+                              </div>
                                 <!-- table -->
                                 <div id="tableData">
                                   <div class="dt-responsive table-responsive">
@@ -152,6 +164,8 @@
                                           <th width=15%>พิกัด</th>
                                           <th width=10%>ระดับน้ำท่วม (ซม.)</th>
                                           <th width=10%>รูป</th>
+                                          <th width=5%></th>
+                                          <th width=5%></th>
                                         </tr>
                                       </thead>
                                       <tbody>     
@@ -165,6 +179,12 @@
                                           <td>{{$data[$i]['water_level']}}</td>
                                           <td>
                                             <a href="{{ url('/flood24/images')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
+                                          </td>
+                                          <td>
+                                            <a href="{{ url('/flood24/edit')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-instagram" ><i class="feather icon-edit"></i>แก้ไข</a>
+                                          </td>
+                                          <td>
+                                            <a href="{{ url('/removefloodmark')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-dribbble" onclick="myFunction()"><i class="feather icon-trash-2"></i>ลบ</a>
                                           </td>
                                                         
                                          
@@ -235,7 +255,11 @@
   
     <script src="{{ asset('js/form/rocket-loader.min.js')}}" data-cf-settings="ce2668daaac54a74e9f6cdff-|49" defer=""></script>
 
-    
+    <script>
+      function myFunction() {
+        confirm("คุณต้องการลบรูปฝายใช่ไหม?");
+      }
+    </script>
     <!-- Map script -->
     <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css')}}" crossorigin=""/>
     <script src="{{ asset('/js/L.Control.Layers.Tree.js')}}"></script>
@@ -261,17 +285,17 @@
         });
 
       var pin = L.icon({
-          iconUrl: '{{ asset('images/icon/pole3.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/pole3.png') }}',
-          iconSize: [18, 48],
+          iconUrl: '{{ asset('images/icon/flood2.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
+          iconSize: [50, 55],
           iconAnchor: [20, 0],
           popupAnchor: [-10, 0]
         });
 
       var pinMO = L.icon({
-          iconUrl: '{{ asset('images/icon/pole3.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/pole3.png') }}',
-          iconSize: [25, 34],
+          iconUrl: '{{ asset('images/icon/flood2.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
+          iconSize: [25, 30],
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
@@ -280,24 +304,26 @@
         if(name!=null){
           return name;
         }else{
-          return "- ";
+          return " ";
         }
       }
-      compass=['east','west'];
-      function addPin(ampName,i,mo){
-        $.getJSON("{{ asset('map/getDataSurvey') }}/"+compass[i], 
+
+      
+      function addPin(ampName,mo){
+        $.getJSON("{{ asset('flood24/getDataSurvey') }}", 
           function (data){
-            // alert (data[0].lat);
+            
             for (i=0;i<data.length;i++){
+              // alert (i);
               // var lo =data[i].geometry.coordinates+ '';;
-              var x=data[i].lat;
-              var y=data[i].long;
-              // alert (x);
-              var text ="<div class='leaflet-popup-content'> <font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > หมายเลขหลัก : " + data[i].pole_id + "</font><br>";
-                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > บริเวณที่ตั้ง : "+ data[i].pole_name+"</font><br>";
-                  text2 ='<img src="images/originals/'+data[i].pix+' " width="100%" >';
-                  text3 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/images/originals/') }}/"+data[i].pix+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>" +"</td><td > <a href='https://maps.google.com/?q="+data[i].lat+","+data[i].long+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
-              if(mo==0){
+              var x=data[i].latitude;
+              var y=data[i].longitude;
+              var text ="<div class='leaflet-popup-content'> <font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > หมายเลขหลัก : " + data[i].code + "</font><br>";
+                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > บริเวณที่ตั้ง : "+ data[i].place_detail+"</font><br>";
+                  text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ระดับน้ำท่วม : "+ data[i].water_level+" เซนติเมตร</font><br>";
+                  text3 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > โครงสร้างที่ทำเครื่องหมาย : "+ checkname(data[i].tool) +" "+ checkname(data[i].tool_detail)+ "</font><br>";
+                  // text3 = '<br><img src="{{ asset('') }}' + data[i].image[0].image_path + '" width="100%" >';
+            if(mo==0){
                 L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3);  
               }else{
                 L.marker([x,y],{icon: pin}).addTo(ampName).bindPopup(text+text1+text2+text3);  
@@ -314,11 +340,9 @@
         // alert(x.matches);
       }else{
         mo=1;
-      }
+      }      
       
-      
-      addPin(station1,0,mo);
-      addPin(station2,1,mo);
+      addPin(station1,mo);
 
       var baseTree = {
           label: 'BaseLayers',
@@ -327,22 +351,8 @@
                        {label: ' แผนที่ภาพถ่ายผ่านดาวเทียม (Satellite)', layer: osmBw},
           ]
         };
-
-
         var ctl = L.control.layers.tree(baseTree, null);
         ctl.addTo(map).collapseTree().expandSelected();
-
-    
-      var overlays = [{
-          label: ' พื้นที่ของแม่น้ำปิง',
-          selectAllCheckbox: true,
-          children: [
-                { label:"ฝั่งตะวันตก",layer: station1},
-                { label:"ฝั่งตะวันออก",layer: station2}
-          ]
-        }];
-        
-        ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
     </script>
 
   

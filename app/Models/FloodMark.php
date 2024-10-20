@@ -19,6 +19,8 @@ class FloodMark extends Model
         'water_level',
         'tool',
         'note',
+        'other_detail',
+        'tool_detail',
         'created_at',
         'updated_at'
     ];
