@@ -99,6 +99,9 @@
 
                                     <form action="{{route('floodmark.add')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
+                                        <div class="text-h2">วันที่สำรวจ
+                                        <input type="date" id="date_survey" name="date_survey" placeholder="DD/MM/YY" required>
+                                        </div>
 
                                         <div class="text-h2">ตำแหน่งบริเวณน้ำท่วม</div>
                                         <div class="form-check mb-3">

@@ -1,6 +1,6 @@
 body {
     background-color: #f2f7fb;
-    font-size: 0.9375rem;
+    font-size: 16px;
     overflow-x: hidden;
     color: #333;
     font-family: "Mitr", sans-serif;
@@ -229,7 +229,7 @@ code {
 }
 
 .card .card-header h5:after {
-    content: "";
+    /* content: ""; */
     background-color: #d2d2d2;
     width: 70px;
     height: 1px;
@@ -8489,11 +8489,12 @@ body.horizontal-icon-fixed .pcoded[pcoded-device-type="desktop"] .pcoded-navbar 
 }
 
 .btn {
-    border-radius: 2px;
+    border-radius: 3px;
     text-transform: capitalize;
-    font-size: 15px;
-    padding: 10px 19px;
+    font-size: 14px;
+    padding: 5px 10px;
     cursor: pointer;
+    width: 100%
 }
 
 @media only screen and (max-width: 480px) {
@@ -9498,7 +9499,7 @@ body.horizontal-icon-fixed .pcoded[pcoded-device-type="desktop"] .pcoded-navbar 
 }
 
 .form-control {
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 2px;
     border: 1px solid #ccc;
 }
