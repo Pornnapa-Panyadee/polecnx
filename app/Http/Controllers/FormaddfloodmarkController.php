@@ -92,7 +92,7 @@ class FormaddfloodmarkController extends Controller
             $image = ImageFloodmark::select('*')->where('code_mark',$location[$i]->code)->get();
             $result[] = [
                 'code'=> $location[$i]->code,
-                'date_survey'=>$location[$i]->date_survey;
+                'date_survey'=>$location[$i]->date_survey,
                 'affected_area'=> $location[$i]->affected_area,
                 'other_detail'=>$location[$i]->other_detail,
                 'place_detail'=> $location[$i]->place_detail,
@@ -140,7 +140,7 @@ class FormaddfloodmarkController extends Controller
         $floodMark= FloodMark::where('code',$request->code)->update(
             [ 
             'affected_area'=>$request->affected_area,
-            'date_survey' => $request->date_survey;
+            'date_survey' => $request->date_survey,
             'other_detail'=>$request->other_detail,
             'place_detail'=>  $request->place_detail,
             'latitude'=> $request->latitude,
