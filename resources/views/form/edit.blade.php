@@ -101,7 +101,7 @@
                                         @csrf
                                          <input type="hidden" name="code" id="code"  value="{{$data[0]['code']}}">
                                          <div class="text-h2">วันที่สำรวจ
-                                        <input type="date" id="date_survey" name="date_survey" placeholder="DD/MM/YY" value=" {{$data[0]['date_survey']}}" required>
+                                        <input type="date" id="date_survey" name="date_survey" value="{{$data[0]['date_survey']}}" required>
                                         </div>
 
                                         <div class="text-h2">ตำแหน่งบริเวณน้ำท่วม</div>
@@ -140,17 +140,17 @@
                                         <div class="text-h2">พิกัดบริเวณน้ำท่วม</div>
                                         <!-- Location Input -->
                                         <div class="row">
-                                          <div class="col-md-12 col-xl-8">
-                                            <input type="text" class="form-control" id="location" name="location" placeholder="กรอกพิกัด หรือ กดปุ่มเพื่อรับพิกัด หรือ เลือกพิกัดจากแผนที่" value="{{$data[0]['latitude']}},{{$data[0]['longitude']}}"  required>
-                                            
+                                          <div class="col-md-12 col-xl-4">
+                                            <input type="text" class="form-control" id="latitude" name="latitude" placeholder="latitude" value="{{$data[0]['latitude']}}">
+                                          </div>
+                                          <div class="col-md-12 col-xl-4">
+                                            <input type="text" class="form-control" id="longitude" name="longitude" placeholder="longitude" value="{{$data[0]['longitude']}}">
                                           </div>
                                           <div class="col-md-12 col-xl-4">
                                             <button type="button" class="btn btn-primary" onclick="getLocation()">Get GPS Location</button>
                                           </div>
                                         </div>
-                                        <!-- Hidden inputs to store latitude and longitude -->
-                                        <input type="hidden" id="latitude" name="latitude" value="{{$data[0]['latitude']}}">
-                                        <input type="hidden" id="longitude" name="longitude" value="{{$data[0]['longitude']}}">
+                                        
                                         <!-- Map to Show Location -->
                                         <div class="row">
                                             <div class="col-md-12 col-xl-12">
@@ -322,7 +322,7 @@
               // Update the latitude and longitude input fields
               document.getElementById('latitude').value = lat;
               document.getElementById('longitude').value = lng;
-              document.getElementById('location').value = `${lat}, ${lng}`;
+              //document.getElementById('location').value = `${lat}, ${lng}`;
 
               // Update the marker position
               if (marker) {
@@ -348,7 +348,7 @@
 
           document.getElementById('latitude').value = latitude;
           document.getElementById('longitude').value = longitude;
-          document.getElementById('location').value = `${latitude}, ${longitude}`;
+          //document.getElementById('location').value = `${latitude}, ${longitude}`;
 
           // Update map with the user's location
           var userLocation = [latitude, longitude];
@@ -379,10 +379,26 @@
           }
       }
 
+      function updateMarkerFromInput() {
+        var lat = parseFloat(document.getElementById('latitude').value);
+        var lng = parseFloat(document.getElementById('longitude').value);
+
+        if (!isNaN(lat) && !isNaN(lng)) {
+            updateLocation(lat, lng);
+        } else {
+            alert("Please enter valid latitude and longitude values.");
+        }
+      }
+
       // Initialize map on page load
       window.onload = function() {
           initMap();
+
+          // Listen to manual input changes
+          document.getElementById('latitude').addEventListener('change', updateMarkerFromInput);
+          document.getElementById('longitude').addEventListener('change', updateMarkerFromInput);
       };
+      
   </script>
   <script>
     document.getElementById('image').addEventListener('change', function(event) {

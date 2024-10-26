@@ -23,6 +23,7 @@ class FormaddfloodmarkController extends Controller
         // สร้างข้อมูลใหม่ในตาราง Flood_Mark
         $floodMark = new FloodMark;
         $floodMark->code = $generatedCode;
+        $floodMark->date_survey = $request->date_survey;
         $floodMark->affected_area = $request->affected_area;
         $floodMark->other_detail = $request->other_detail;
         $floodMark->place_detail = $request->house_number;
@@ -111,7 +112,7 @@ class FormaddfloodmarkController extends Controller
     public function editDataSurvey($code=0) {
         $image = ImageFloodmark::select('*')->where('code_mark',$code)->get();
         $data = FloodMark::select('*')->where('code',$code)->get();
-        // dd($image[0]['image_path']);
+        // dd($data);
         return view('form.edit',compact('data','image'));      
     }
 
