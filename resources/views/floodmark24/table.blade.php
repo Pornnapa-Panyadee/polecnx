@@ -2,7 +2,8 @@
 <html lang="en">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8">
-    <title>CM : หลักระดับน้ำท่วม </title>
+    <title>CM Flood Mark 2024 : เครื่องหมายระดับน้ำท่วมเมืองเชียงใหม่ ปี 2567 </title>
+
 
     <link rel="icon" href="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Mitr|Prompt" rel="stylesheet">
@@ -32,13 +33,17 @@
       .text{
         font-size: 14px;
         margin: 5px;
-        padding:10px;
+        padding:5px;
         text-indent: 2em;
         text-align:justify;
       }
+      .leaflet-popup-content-wrapper,.leaflet-popup-content{
+        width: 400px;
+        margin: 5px;
+      }
       #map{
 			  font-family: Mitr, sans-serif;
-			  height: 720px;
+			  height: 820px;
 			  display: block;
         margin: auto;
         text-align: left;
@@ -135,14 +140,22 @@
                               <div class="row">
                                 
                                 <div class="col-md-12 col-xl-3">
-                                  <h4>กิจกรรม : การจัดทำหลักเตือนระดับน้ำท่วม</h4>
-                                โดย มหาวิทยาลัยเชียงใหม่<br><br>
+                                  <center><h4>เครื่องหมายระดับน้ำท่วมเขตตัวเมืองเชียงใหม่ ปี 2567 (CM Flood Mark 2024)</h4>
+                                โดย มหาวิทยาลัยเชียงใหม่</center><hr>
                                 <span>
-                                  <b>หลักเตือนระดับน้ำท่วมเขตตัวเมืองเชียงใหม่</b> 
+                                  <b>เครื่องหมายระดับน้ำท่วม(Flood Mark)</b> 
                                 </span>
                                 <p class="text">
-                                  หลักเตือนระดับน้ำท่วมเพื่อการเตือนภัยสำหรับชุมชนในพื้นที่เสี่ยงภัย จำนวน 300 หลัก เป็นหลักที่แสดงค่าระดับน้ำที่จะท่วมแต่ละพื้นที่ซึ่งหลักติดตั้งอยู่ หลักระดับน้ำท่วมเป็นเสาคอนกรีตสูง 1.40 เมตร ติดตั้งกระจายทั่วพื้นที่เคยเกิดน้ำท่วมในเขตตัวเมืองเชียงใหม่ โดยที่เสาของหลักเขียนบอกค่าตัวเลขระดับน้ำต่างๆที่น้ำจะเข้าท่วมบนพื้นผิวโดยเปรียบเทียบกับค่าระดับน้ำที่สถานี P.1 เชิงสะพานนวรัฐ การใช้หลักเตือนระดับน้ำท่วมนั้น ให้รับฟังข่าวและผลการพยากรณ์ระดับน้ำปิงล่วงหน้าที่สถานีวัดน้ำ P.1 สะพานนวรัฐ โดยหน่วยงานที่เกี่ยวข้องจะรายงานให้ทราบตลอดในช่วงการเกิดภาวะน้ำท่วม เมื่อทราบค่าระดับน้ำที่จะเกิดที่สถานีวัดน้ำดังกล่าวแล้วให้นำตัวเลขค่าระดับน้ำของแม่น้ำปิงนั้นมาเทียบกับตัวเลขที่อยู่ที่เสาแสดงระดับน้ำ ก็จะทราบความสูงของระดับน้ำที่จะท่วมบริเวณที่มีหลักวางอยู่ ทำให้ประชาชนสามารถวางแผนป้องกันน้ำท่วมบ้านเรือนได้ล่วงหน้าอย่างทันท่วงที
-                                  <center><img  src="{{ asset('images/icon/polecnx.jpg') }}" width=85% > <br>ตัวอย่าง หลักระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่ </center>
+                                  เพื่อการเตือนภัยสำหรับชุมชนในพื้นที่เสี่ยงภัยจำนวนมากกว่า 3000 จุด 
+                                  แสดงค่าความสูงของระดับน้ำที่จะท่วมแต่ละพื้นที่ ติดตั้งกระจายทั่วพื้นที่เคยเกิดน้ำท่วมในเขตตัวเมืองเชียงใหม่ 
+                                  โดยแสดงระดับน้ำท่วมสูงสุดวัดจากผิวถนน โดยเปรียบเทียบกับค่าระดับน้ำที่สถานี P.1 เชิงสะพานนวรัฐ 
+                                  ซึ่งเกิดน้ำท่วมใหญ่ในเดือนตุลาคม พ.ศ. 2567 โดยที่ P1 = 5.30 เมตร <center>
+                                  <img  src="{{ asset('images/icon/floodmark.jpg') }}" width=75%  style="border: 1px solid black;"> <br> <p>ตัวอย่าง เครื่องหมายระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p> </center>
+                                  <img  src="{{ asset('images/icon/refflood24.png') }}" width=100%  >  
+                                  <img  src="{{ asset('images/icon/flood_ref.png') }}" width=100%  >
+                                  
+                                </center>
+                                
                                 </p>
                                 
                                 </div>
@@ -154,7 +167,7 @@
                                   <div class="card-block p-b-0">
                                     <div id="map" style="border-style: groove;"></div>
                                     <br>
-                                    <center><img  src="{{ asset('images/icon/refmappole.png') }}" width=75% ></center>
+                                    <!-- <center><img  src="{{ asset('images/icon/refmappole.png') }}" width=75% ></center> -->
                                   </div>
                                   <!-- End Map show -->
                                 </div>
@@ -172,7 +185,7 @@
                         <div class="card-block">
                           <div class="row">
                             <div class="col-lg-12 col-xl-12">
-                              <div class="sub-title"><h4>ตารางแสดงรายละเอียดหลักระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</h4> </div>
+                              <div class="sub-title"><h4>ตารางแสดงรายละเอียดเครื่องหมายระดับน้ำท่วมเมืองเชียงใหม่ เดือนตุลาคม พ.ศ.2567 </h4> </div>
                               <!-- choose Amp -->
                                 
                               <br>
@@ -184,28 +197,28 @@
                                         <tr>
                                           <th width=5%>#</th>
                                           <th width=10%>รหัส</th>
-                                          <th width=20%>บริเวณที่ตั้ง</th>
-                                          <th width=15%>ระดับฐานหลัก</th>
-                                          <th width=15%>ระดับน้ำท่วมสูงสุด</th>
-                                          <th width=15%>ระดับน้ำท่วมจากฐานหลัก</th>
-                                          <th>ภาพประกอบ</th>
-                                          <th>เส้นทาง</th>
+                                          <th width=10%>โครงสร้างที่ทำเครื่องหมาย</th>
+                                          <th width=15%>ตำแหน่งที่ตั้ง</th>
+                                          <th width=15%>พิกัด</th>
+                                          <th width=10%>ระดับน้ำท่วม (ซม.)</th>
+                                          <th width=10%>รูป</th>
+                                          <th width=5%>เส้นทาง</th>
                                         </tr>
                                       </thead>
                                       <tbody>     
                                       <?php for($i = 0;$i < count($data);$i++){  ?>
-                                        <tr>
-                                          <td align="center">{{$i+1}} </td>
-                                          <td align="center"><a href='' target="_blank"> {{$data[$i]['pole_id']}} </a></td>
-                                          <td >{{$data[$i]['pole_name']}}</td>
-                                          <td align="center">{{$data[$i]['base_level']}}</td>
-                                          <td align="center">{{$data[$i]['flood_level']}}  </td>
-                                          <td align="center">{{$data[$i]['flood_max']}}</td>
-                                          <td align="center" >  
-                                           <a href='{{ asset('/images/originals') }}/{{$data[$i]['pix']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
-                                          <td align="center" >  
-                                           <a href='https://maps.google.com/?q={{$data[$i]['lat']}},{{$data[$i]['long']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>เส้นทาง</a>
-                                            
+                                        <tr align="center">
+                                          <td>{{$i+1}} </td>
+                                          <td> {{$data[$i]['code']}} </td>
+                                          <td >{{$data[$i]['tool']}}</td>
+                                          <td>{{$data[$i]['place_detail']}}</td>
+                                          <td>{{ number_format($data[$i]['latitude'], 4) }},{{ number_format($data[$i]['longitude'], 4) }} </td>
+                                          <td>{{$data[$i]['water_level']}}</td>
+                                          <td>
+                                            <a href="{{ url('/flood24/report')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
+                                          </td>
+                                          <td> 
+                                            <a href='https://maps.google.com/?q={{$data[$i]['latitude']}},{{$data[$i]['longitude']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>เส้นทาง</a>
                                           </td>
                                         </tr>
                                       <?php }?>
@@ -214,7 +227,7 @@
                                     </table>
                                     
                                   </div>
-                                </div>    
+                                </div>     
                             </div>
                                                                                     
                           </div>
@@ -250,8 +263,7 @@
     <script src="{{ asset('js/form/script.js')}}"></script>
     <script async  src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     
-    <script src= "{{ asset('js/chooselocationReport.js') }}"></script>
-    <script src="{{ asset('js/form/rocket-loader.min.js')}}"></script>
+    
   
     <script src="{{ asset('js/form/jquery.datatables.min.js')}}" ></script>
     <script src="{{ asset('js/form/datatables.buttons.min.js')}}" ></script>
@@ -283,10 +295,12 @@
       
       var station1 = new L.LayerGroup();
       var station2 = new L.LayerGroup();
+      var station3 = new L.LayerGroup();
+      var station4 = new L.LayerGroup();
     
       var borders= new L.LayerGroup();
-      var x = 18.780015 ; 
-      var y = 99.01;
+      var x = 18.72015 ; 
+      var y = 98.9801;
       var mbAttr = 'Chiang Mai ',
           mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFucGFueWEiLCJhIjoiY2loZWl5ZnJ4MGxnNHRwbHp5bmY4ZnNxOCJ9.IooQB0jYS_4QZvIq7gkjeQ';
           osm = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
@@ -294,23 +308,80 @@
           osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
       var map = L.map('map', {
-          layers: [osm,station1,station2,borders],
+          layers: [osm,station1,station2,station3,station4,borders],
           center: [x,y],
-          zoom: 14,
+          zoom: 12,
         });
 
       var pin = L.icon({
-          iconUrl: '{{ asset('images/icon/pole3.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/pole3.png') }}',
-          iconSize: [18, 48],
-          iconAnchor: [20, 0],
+          iconUrl: '{{ asset('images/icon/flood2.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
+          iconSize: [30, 35],
+          iconAnchor: [10, 0],
+          popupAnchor: [-10, 0]
+        });
+      
+      var pin_red = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_red.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_red.png') }}',
+          iconSize: [30, 35],
+          iconAnchor: [25, 0],
+          popupAnchor: [-10, 0]
+        });
+      var pin_orange = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_orange.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_orange.png') }}',
+          iconSize: [30, 35],
+          iconAnchor: [25, 0],
+          popupAnchor: [-10, 0]
+        });
+      var pin_yellow = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_yellow.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_yellow.png') }}',
+          iconSize: [30, 35],
+          iconAnchor: [25, 0],
+          popupAnchor: [-10, 0]
+        });
+      var pin_green = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_green.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_green.png') }}',
+          iconSize: [30, 35],
+          iconAnchor: [25, 0],
           popupAnchor: [-10, 0]
         });
 
+      var pinMO_red = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_red.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_red.png') }}',
+          iconSize: [15, 20],
+          iconAnchor: [5, 30],
+          popupAnchor: [0, 0]
+        });
+      var pinMO_orange = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_orange.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_orange.png') }}',
+          iconSize: [15, 20],
+          iconAnchor: [5, 30],
+          popupAnchor: [0, 0]
+        });
+      var pinMO_yellow = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_yellow.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_yellow.png') }}',
+          iconSize: [15, 20],
+          iconAnchor: [5, 30],
+          popupAnchor: [0, 0]
+        });
+      var pinMO_green = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_green.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_green.png') }}',
+          iconSize: [15, 20],
+          iconAnchor: [5, 30],
+          popupAnchor: [0, 0]
+        });
       var pinMO = L.icon({
-          iconUrl: '{{ asset('images/icon/pole3.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/pole3.png') }}',
-          iconSize: [25, 34],
+          iconUrl: '{{ asset('images/icon/flood2.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
+          iconSize: [15, 20],
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
@@ -319,27 +390,39 @@
         if(name!=null){
           return name;
         }else{
-          return "- ";
+          return " ";
         }
       }
-      compass=['east','west'];
-      function addPin(ampName,i,mo){
-        $.getJSON("{{ asset('map/getDataSurvey') }}/"+compass[i], 
+
+      
+      function addPin(ampName,mo,pi){
+        $.getJSON("{{ asset('flood24/getDataSurveyLevel') }}"+"/"+pi, 
           function (data){
-            // alert (data[0].lat);
+            const icon_pin = [pin,pin_green, pin_yellow, pin_orange, pin_red]; // Use actual icon objects
+            const icon_pinMO = [pinMO,pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red]; // Use actual icon objects
+            let pin_2;
+            
+            // icon_pin=["pin_green","pin_yellow","pin_orange","pin_red"];
+            // pin_2=icon_pin[i+1];
             for (i=0;i<data.length;i++){
-              // var lo =data[i].geometry.coordinates+ '';;
-              var x=data[i].lat;
-              var y=data[i].long;
-              // alert (x);
-              var text ="<div class='leaflet-popup-content'> <font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > หมายเลขหลัก : " + data[i].pole_id + "</font><br>";
-                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > บริเวณที่ตั้ง : "+ data[i].pole_name+"</font><br>";
-                  text2 ='<img src="images/originals/'+data[i].pix+' " width="100%" >';
-                  text3 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/images/originals/') }}/"+data[i].pix+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>" +"</td><td > <a href='https://maps.google.com/?q="+data[i].lat+","+data[i].long+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
-              if(mo==0){
-                L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+              // alert (i);
+              // var lo =data[i].geometry.coordinates+ '';
+              
+              
+              var x=data[i].latitude;
+              var y=data[i].longitude;
+              var text ="<div class='leaflet-popup-content'> <font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > หมายเลขหลัก : " + data[i].code + "</font><br>";
+                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > บริเวณที่ตั้ง : "+ data[i].place_detail+"</font><br>";
+                  text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ระดับน้ำท่วม : "+ data[i].water_level+" เซนติเมตร</font><br>";
+                  text3 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > โครงสร้างที่ทำเครื่องหมาย : "+ checkname(data[i].tool) +" "+ checkname(data[i].tool_detail)+ "</font><br>";
+                  // text3 = '<br><img src="{{ asset('') }}' + data[i].image[0].image_path + '" width="100%" >';
+                  text4 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/flood24/report') }}/"+data[i].code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>"+"</td><td> <a href='https://maps.google.com/?q="+data[i].latitude+","+data[i].longitude+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
+            if(mo==0){
+                pin_2 = icon_pinMO[pi % icon_pin.length];
+                L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3+text4);  
               }else{
-                L.marker([x,y],{icon: pin}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+                pin_2 = icon_pin[pi % icon_pin.length];
+                L.marker([x,y],{icon: pin_2}).addTo(ampName).bindPopup(text+text1+text2+text3+text4);  
               }
             }//end for
           });      
@@ -353,11 +436,13 @@
         // alert(x.matches);
       }else{
         mo=1;
-      }
+      }      
       
       
-      addPin(station1,0,mo);
-      addPin(station2,1,mo);
+      addPin(station2,mo,3);
+      addPin(station3,mo,2);
+      addPin(station4,mo,1);
+      addPin(station1,mo,4);
 
       var baseTree = {
           label: 'BaseLayers',
@@ -366,22 +451,23 @@
                        {label: ' แผนที่ภาพถ่ายผ่านดาวเทียม (Satellite)', layer: osmBw},
           ]
         };
+      var ctl = L.control.layers.tree(baseTree, null);
+      ctl.addTo(map).collapseTree().expandSelected();
 
-
-        var ctl = L.control.layers.tree(baseTree, null);
-        ctl.addTo(map).collapseTree().expandSelected();
-
-    
       var overlays = [{
           label: ' พื้นที่ของแม่น้ำปิง',
           selectAllCheckbox: true,
           children: [
-                { label:" ฝั่งตะวันตก",layer: station1},
-                { label:" ฝั่งตะวันออก",layer: station2}
+                { label:" 0 - 50 ซม.",layer: station4},
+                { label:" 50 - 100 ซม.",layer: station3},
+                { label:" 100 - 150 ซม.",layer: station2},
+                { label:" > 150 ซม.",layer: station1}
           ]
         }];
         
         ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
+
+
     </script>
 
   

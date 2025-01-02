@@ -19,6 +19,11 @@ Route::get('map/getDataSurvey/{compass}', 'App\Http\Controllers\PolelocationCont
 Route::get('/pole', 'App\Http\Controllers\PolelocationController@getDataHomeTable');
 Route::get('/floodmap', function () { return view('guest.floodmap');});
 
+Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable');
+Route::get('flood24/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
+Route::get('/flood24/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
+
+
 Route::get('/flood24/form', function () { return view('form.add');});
 Route::get('/flood24/successupload', function () { return view('form.result');});
 Route::get('/flood24/edit/{code}', 'App\Http\Controllers\FormaddfloodmarkController@editDataSurvey');
@@ -28,3 +33,7 @@ Route::get('/flood24/table', 'App\Http\Controllers\FormaddfloodmarkController@ge
 Route::get('/flood24/images/{code}', 'App\Http\Controllers\FormaddfloodmarkController@getImage');
 Route::get('flood24/getDataSurvey', 'App\Http\Controllers\FormaddfloodmarkController@getDataSurvey')->name('flood24.getDataSurvey');
 Route::get('photoremove/{id}', 'App\Http\Controllers\FormaddfloodmarkController@destroyImage')->name('photoremove');
+
+
+
+Route::get('/genpng', function () { return view('genImage.genPNG');});
