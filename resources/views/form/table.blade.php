@@ -159,13 +159,14 @@
                                         <tr>
                                           <th width=5%>#</th>
                                           <th width=10%>รหัส</th>
-                                          <th width=10%>บริเวณน้ำท่วม</th>
+                                          <th width=10%>โครงสร้างที่ทำเครื่องหมาย</th>
                                           <th width=15%>ตำแหน่งที่ตั้ง</th>
                                           <th width=15%>พิกัด</th>
                                           <th width=10%>ระดับน้ำท่วม (ซม.)</th>
+                                          <th width=10%>วันสำรวจ</th>
                                           <th width=10%>รูป</th>
-                                          <th width=5%></th>
-                                          <th width=5%></th>
+                                          <th ></th>
+                                          <th ></th>
                                         </tr>
                                       </thead>
                                       <tbody>     
@@ -173,10 +174,11 @@
                                         <tr align="center">
                                           <td>{{$i+1}} </td>
                                           <td> {{$data[$i]['code']}} </td>
-                                          <td >{{$data[$i]['affected_area']}}</td>
+                                          <td >{{$data[$i]['tool']}}</td>
                                           <td>{{$data[$i]['place_detail']}}</td>
                                           <td>{{ number_format($data[$i]['latitude'], 4) }},{{ number_format($data[$i]['longitude'], 4) }} </td>
                                           <td>{{$data[$i]['water_level']}}</td>
+                                          <td>{{$data[$i]['date_survey']}}</td>
                                           <td>
                                             <a href="{{ url('/flood24/images')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
                                           </td>
