@@ -51,4 +51,11 @@ class floodmark24Controller extends Controller
         //dd($image[0]['image_path']);
         return view('floodmark24.image',compact('data','image'));      
     }
+
+    public function getImagereport($code=0) {
+        $image = ImageFloodmark::select('*')->where('code_mark',$code)->get();
+        $data = FloodMark::select('*')->where('code',$code)->get();
+        // dd($image[0]['image_path']);
+        return view('genImage.genPNG',compact('data','image'));      
+    }
 }

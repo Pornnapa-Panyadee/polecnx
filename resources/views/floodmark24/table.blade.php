@@ -30,9 +30,15 @@
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
 
     <style type="text/css">
+      .texth{
+        font-size: 20px;
+        margin: 2px;
+        padding:5px;
+        text-align:center;
+      }
       .text{
-        font-size: 14px;
-        margin: 5px;
+        font-size: 16px;
+        margin: 2px;
         padding:5px;
         text-indent: 2em;
         text-align:justify;
@@ -43,7 +49,7 @@
       }
       #map{
 			  font-family: Mitr, sans-serif;
-			  height: 820px;
+			  height: 720px;
 			  display: block;
         margin: auto;
         text-align: left;
@@ -58,15 +64,21 @@
 		  }#map.td {
 		    padding: 15px;
 		    text-align: right;
-        }
-        select{
-            width: 100%;
-            height: 40px;
-        }
-        button.btn {
-            width: 100%;
-        }
-        @media only screen and (max-width:480px) {
+      }
+      select{
+        width: 100%;
+        height: 40px;
+      }
+      button.btn {
+        width: 100%;
+      }
+      .pix_floodmark{
+        width: 65%;
+      }
+      @media only screen and (max-width:480px) {
+         .pix_floodmark{
+              width: 50%;
+          }
             #map{
                 height: 450px;
                 font-size: 14px;
@@ -83,6 +95,9 @@
             }
             .btn-sm{
                 font-size: 2vw;
+            }
+            .text{
+              font-size: 18px;
             }
         }
       #fix-header{
@@ -138,38 +153,44 @@
                           <div class="card table-card">
                             <div class="card-header">
                               <div class="row">
+                                <div class="col-md-12 col-xl-12 texth">
+                                  <center>เครื่องหมายระดับน้ำท่วมเขตตัวเมืองเชียงใหม่ ปี 2567 (CM Flood Mark 2024)
+                                  <p>โดย มหาวิทยาลัยเชียงใหม่</p></center><hr>
+                                </div>
                                 
-                                <div class="col-md-12 col-xl-3">
-                                  <center><h4>เครื่องหมายระดับน้ำท่วมเขตตัวเมืองเชียงใหม่ ปี 2567 (CM Flood Mark 2024)</h4>
-                                โดย มหาวิทยาลัยเชียงใหม่</center><hr>
-                                <span>
-                                  <b>เครื่องหมายระดับน้ำท่วม(Flood Mark)</b> 
-                                </span>
-                                <p class="text">
-                                  เพื่อการเตือนภัยสำหรับชุมชนในพื้นที่เสี่ยงภัยจำนวนมากกว่า 3000 จุด 
-                                  แสดงค่าความสูงของระดับน้ำที่จะท่วมแต่ละพื้นที่ ติดตั้งกระจายทั่วพื้นที่เคยเกิดน้ำท่วมในเขตตัวเมืองเชียงใหม่ 
-                                  โดยแสดงระดับน้ำท่วมสูงสุดวัดจากผิวถนน โดยเปรียบเทียบกับค่าระดับน้ำที่สถานี P.1 เชิงสะพานนวรัฐ 
-                                  ซึ่งเกิดน้ำท่วมใหญ่ในเดือนตุลาคม พ.ศ. 2567 โดยที่ P1 = 5.30 เมตร <center>
-                                  <img  src="{{ asset('images/icon/floodmark.jpg') }}" width=75%  style="border: 1px solid black;"> <br> <p>ตัวอย่าง เครื่องหมายระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p> </center>
-                                  <img  src="{{ asset('images/icon/refflood24.png') }}" width=100%  >  
-                                  <img  src="{{ asset('images/icon/flood_ref.png') }}" width=100%  >
+                                </div>
+                              <div class="row">
+                                <div class="col-md-12 col-xl-2">
                                   
-                                </center>
-                                
-                                </p>
+                                  <font class="texth">
+                                    <center><b>เครื่องหมายระดับน้ำท่วม (Flood Mark)</b> </center>
+                                  </font>
+                                  <p class="text">
+                                    เพื่อการเตือนภัยสำหรับชุมชนในพื้นที่เสี่ยงภัย จำนวนมากกว่า 3000 จุด 
+                                    ติดตั้งกระจายทั่วพื้นที่เคยเกิดน้ำท่วมในเขตตัวเมืองเชียงใหม่ 
+                                    โดยแสดงระดับน้ำท่วมสูงสุดวัดจากผิวถนน โดยเปรียบเทียบกับค่าระดับน้ำของแม่น้ำปิงที่สถานี P.1 
+                                    เชิงสะพานนวรัฐ ซึ่งเกิดน้ำท่วมใหญ่ในเดือนตุลาคม พ.ศ. 2567 โดยที่ P1 = 5.30 เมตร
+                                    <center>
+                                    <br>
+                                    <img  class="pix_floodmark" src="{{ asset('images/icon/floodmark.jpg') }}"  style="border: 1px solid black;"> <br> <p>ตัวอย่าง เครื่องหมายระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p> </center>
+                                     <br>
+                                    <img  src="{{ asset('images/icon/flood_ref.png') }}" width=100%  >  
+                                  </center>
+                                  
+                                  </p>
                                 
                                 </div>
                                 
                                 
-                                <div class="col-md-12 col-xl-9">
+                                <div class="col-md-12 col-xl-10">
                                   
                                   <!-- Map Show -->
                                   <div class="card-block p-b-0">
                                     <div id="map" style="border-style: groove;"></div>
-                                    <br>
-                                    <!-- <center><img  src="{{ asset('images/icon/refmappole.png') }}" width=75% ></center> -->
+                                    <center><img  src="{{ asset('images/icon/refflood24_1.png') }}" width=50%  ></center>
                                   </div>
                                   <!-- End Map show -->
+                                   
                                 </div>
                               </div>
                               
@@ -215,7 +236,7 @@
                                           <td>{{ number_format($data[$i]['latitude'], 4) }},{{ number_format($data[$i]['longitude'], 4) }} </td>
                                           <td>{{$data[$i]['water_level']}}</td>
                                           <td>
-                                            <a href="{{ url('/flood24/report')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
+                                            <a href="{{ url('/flood24/image')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
                                           </td>
                                           <td> 
                                             <a href='https://maps.google.com/?q={{$data[$i]['latitude']}},{{$data[$i]['longitude']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>เส้นทาง</a>
@@ -299,8 +320,8 @@
       var station4 = new L.LayerGroup();
     
       var borders= new L.LayerGroup();
-      var x = 18.72015 ; 
-      var y = 98.9801;
+      var x = 18.787563; 
+      var y = 99.003968;
       var mbAttr = 'Chiang Mai ',
           mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFucGFueWEiLCJhIjoiY2loZWl5ZnJ4MGxnNHRwbHp5bmY4ZnNxOCJ9.IooQB0jYS_4QZvIq7gkjeQ';
           osm = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
@@ -310,7 +331,7 @@
       var map = L.map('map', {
           layers: [osm,station1,station2,station3,station4,borders],
           center: [x,y],
-          zoom: 12,
+          zoom: 13,
         });
 
       var pin = L.icon({
@@ -416,7 +437,7 @@
                   text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ระดับน้ำท่วม : "+ data[i].water_level+" เซนติเมตร</font><br>";
                   text3 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > โครงสร้างที่ทำเครื่องหมาย : "+ checkname(data[i].tool) +" "+ checkname(data[i].tool_detail)+ "</font><br>";
                   // text3 = '<br><img src="{{ asset('') }}' + data[i].image[0].image_path + '" width="100%" >';
-                  text4 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/flood24/report') }}/"+data[i].code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>"+"</td><td> <a href='https://maps.google.com/?q="+data[i].latitude+","+data[i].longitude+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
+                  text4 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/flood24/image') }}/"+data[i].code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>"+"</td><td> <a href='https://maps.google.com/?q="+data[i].latitude+","+data[i].longitude+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
             if(mo==0){
                 pin_2 = icon_pinMO[pi % icon_pin.length];
                 L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3+text4);  
