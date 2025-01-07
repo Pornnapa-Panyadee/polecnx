@@ -215,7 +215,7 @@
                                                                                         &#9900; ระดับน้ำท่วมสูงจากผิวถนน<br>
                                                                                         <table class="leveltable">
                                                                                             <tr>
-                                                                                                <td width=50%><font class="levelwater">{{$data[0]['water_level']}}</font></td>
+                                                                                                <td width=75%><font class="levelwater">{{$data[0]['water_level']}}</font></td>
                                                                                                 <td style="vertical-align: bottom;">ซม.</td>
                                                                                             </tr>
                                                                                         </table>
