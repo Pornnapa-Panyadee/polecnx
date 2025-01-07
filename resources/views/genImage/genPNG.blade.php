@@ -107,6 +107,7 @@
         }
 
         .leveltable {
+            text-align: right;
             margin-top: -10px;
             margin-left: 80px;
         }
@@ -216,7 +217,7 @@
                                                                                         <table class="leveltable">
                                                                                             <tr>
                                                                                                 <td width=75%><font class="levelwater">{{$data[0]['water_level']}}</font></td>
-                                                                                                <td style="vertical-align: bottom;">ซม.</td>
+                                                                                                <td width=25% style="vertical-align: bottom;">ซม.</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                         &#9900; วันที่ถ่ายภาพ {{$data[0]['date_survey']}}
