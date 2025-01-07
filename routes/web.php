@@ -22,6 +22,7 @@ Route::get('/floodmap', function () { return view('guest.floodmap');});
 Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable');
 Route::get('flood24/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
 Route::get('/flood24/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
+Route::get('/flood24/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
 
 
 Route::get('/flood24/form', function () { return view('form.add');});
