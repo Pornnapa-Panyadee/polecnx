@@ -107,8 +107,8 @@
         }
 
         .leveltable {
-            margin-top: -40px;
-            margin-left: 180px;
+            margin-top: -10px;
+            margin-left: 80px;
         }
 
         .download-btn {
@@ -133,6 +133,8 @@
             word-wrap: break-word;
             word-break: break-word;
             white-space: normal;
+            padding-left: 10px; 
+            
         }
     </style>
 </head>
@@ -202,10 +204,10 @@
                                                                             <br>
                                                                             <table>
                                                                                 <tr>
-                                                                                    <td width=50%>
+                                                                                    <td width=55%>
                                                                                         &#9900; หมายเลขพิกัด {{$data[0]['code']}}<br>
                                                                                         &#9900; โครงสร้างที่ทำเครื่องหมาย : {{$data[0]['tool']}}<br>
-                                                                                        &#9900; ที่ติดตั้ง : {{$data[0]['place_detail']}}<br>
+                                                                                        &#9900; ที่ติดตั้ง : {{$data[0]['place_detail']}} <br>
                                                                                         &#9900; พิกัด : {{$data[0]['latitude']}},{{$data[0]['longitude']}}
                                                                                     </td>
                                                                                     <td>
