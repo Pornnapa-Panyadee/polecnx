@@ -91,7 +91,7 @@
         }
 
         table {
-            margin-left: 25px;
+            margin-left: 15px;
             vertical-align: top;
         }
 
@@ -150,7 +150,7 @@
         <div class="pcoded-overlay-box"></div>
 
         <div class="pcoded-container navbar-wrapper">
-            @include('menu.header')
+            @include('menu.header_pole')
             @include('menu.slidebar')
 
             <div class="pcoded-main-container">
@@ -212,11 +212,11 @@
                                                                                     </td>
                                                                                     <td>
                                                                                         &#9900; เทียบกับระดับน้ำปิงสถานี P.1 = 5.30 น.<br>
-                                                                                        &#9900; ระดับน้ำท่วมจากถนน<br>
+                                                                                        &#9900; ระดับน้ำท่วมสูงจากผิวถนน<br>
                                                                                         <table class="leveltable">
                                                                                             <tr>
                                                                                                 <td width=50%><font class="levelwater">{{$data[0]['water_level']}}</font></td>
-                                                                                                <td style="vertical-align: bottom;">เซนติเมตร</td>
+                                                                                                <td style="vertical-align: bottom;">ซม.</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                         &#9900; วันที่ถ่ายภาพ {{$data[0]['date_survey']}}

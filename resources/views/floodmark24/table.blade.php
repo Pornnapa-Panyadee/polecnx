@@ -99,6 +99,19 @@
             .text{
               font-size: 18px;
             }
+          .texth{
+            font-size: 22px;
+            margin: 2px;
+            padding:5px;
+            text-align:center;
+          }
+          .text{
+            font-size: 18px;
+            margin: 2px;
+            padding:5px;
+            text-indent: 2em;
+            text-align:justify;
+          }
         }
       #fix-header{
         font-size:16px;
@@ -116,6 +129,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+          }
+          .texth{
+            font-size: 22px;
+            margin: 2px;
+            padding:5px;
+            text-align:center;
+          }
+          .text{
+            font-size: 18px;
+            margin: 2px;
+            padding:5px;
+            text-indent: 2em;
+            text-align:justify;
           }
       }
      </style>
@@ -135,7 +161,7 @@
       <div class="pcoded-overlay-box"></div>
       
       <div class="pcoded-container navbar-wrapper">
-        @include('menu.header')
+        @include('menu.header_pole')
         @include('menu.slidebar')
 
         <div class="pcoded-main-container">

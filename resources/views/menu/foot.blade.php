@@ -9,7 +9,7 @@
                 มหาวิทยาลัยเชียงใหม่ <br> 
                </td>
                <td width=50% align="left">
-                <a href="https://cmu.ac.th/"> <img src="{{ asset('images/logo/cmu.png') }}" width="10%"></a>
+                <a href="https://cmu.ac.th/"> <img src="{{ asset('images/logo/cmu.png') }}" width="20%"></a>
             </td>
           </tr>
         </table>
