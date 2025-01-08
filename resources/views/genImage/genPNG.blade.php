@@ -98,6 +98,7 @@
         .levelwater {
             font-size: 48px;
             text-align: right;
+            padding-left: 80px;
         }
 
         td {
@@ -214,12 +215,14 @@
                                                                                     <td>
                                                                                         &#9900; เทียบกับระดับน้ำปิงสถานี P.1 = 5.30 น.<br>
                                                                                         &#9900; ระดับน้ำท่วมสูงจากผิวถนน<br>
-                                                                                        <table class="leveltable">
+                                                                                        <font class="levelwater">{{$data[0]['water_level']}}</font>
+                                                                                        ซม.<br>
+                                                                                        <!-- <table class="leveltable">
                                                                                             <tr>
                                                                                                 <td width=65%><font class="levelwater">{{$data[0]['water_level']}}</font></td>
                                                                                                 <td width=35% style="vertical-align: bottom;">ซม.</td>
                                                                                             </tr>
-                                                                                        </table>
+                                                                                        </table> -->
                                                                                         &#9900; วันที่ถ่ายภาพ {{$data[0]['date_survey']}}
                                                                                     </td>
                                                                                 </tr>
