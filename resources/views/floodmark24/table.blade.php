@@ -30,6 +30,26 @@
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
 
     <style type="text/css">
+      .container1 {
+            width: 100%;
+            position: relative;
+            align-items: center;
+        }
+        table {
+            margin-left: 15px;
+            vertical-align: top;
+        }
+        td {
+            display: table-cell;
+            vertical-align: top;
+            unicode-bidi: isolate;
+        
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+            padding-left: 10px; 
+            
+        }
       .texth {
         font-size: 20px;
         margin: 10px 0;
@@ -73,19 +93,7 @@
       /* .pix_floodmark {
         width: 65%;
       } */
-       .container1 {
-            width: 100%;
-            position: relative;
-            align-items: center;
-        }
-
-        .header {
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-            background-color: #bce0ff;
-        }
-      @media only screen and (max-width: 480px) {
+      /* @media only screen and (max-width: 480px) {
         .pix_floodmark {
           width: 50%;
         }
@@ -114,17 +122,17 @@
           margin: 10px 0;
           padding: 10px;
         }
-      }
+      } */
       /* #fix-header {
         font-size: 16px;
       } */
-      th {
+      /* th {
         text-align: center;
       }
       .btn {
         padding: 5px 15px;
-      }
-      @media screen and (max-width: 600px) {
+      } */
+      /* @media screen and (max-width: 600px) {
         div.find {
           width: 80%;
           text-align: center;
@@ -145,10 +153,9 @@
           text-align: justify;
           line-height: 1.6;
         }
-      }
+      } */
     </style>
-
-
+  
 
   </head>
 
