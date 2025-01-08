@@ -71,44 +71,10 @@
             border-width: 0 0 0 2px;
         }
 
-        .details ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .details ul li {
-            margin-bottom: 10px;
-        }
-
-        .top-row {
-            display: flex;
-            flex-direction: row;
-            border-style: solid;
-            border-color: rgb(8, 8, 8);
-            border-width: 2px;
-        }
-
-        .top-row img {
-            margin: 5px 0 5px 5px;
-            width: 49.4%;
-        }
-
-        table {
-            margin-left: 15px;
-            vertical-align: top;
-        }
-
-        .levelwater {
-            font-size: 48px;
-            text-align: right;
-        }
-
-        td {
-            display: table-cell;
-            vertical-align: top;
-            unicode-bidi: isolate;
-        }
-        .texth {
+       
+    </style>
+    <style type="text/css">
+      .texth {
         font-size: 20px;
         margin: 10px 0;
         padding: 10px;
@@ -124,7 +90,7 @@
       }
       .leaflet-popup-content-wrapper, .leaflet-popup-content {
         width: 400px;
-        margin: 10px auto;
+        margin: 10px;
       }
       #map {
         font-family: 'Mitr', sans-serif;
@@ -141,13 +107,16 @@
         padding: 15px;
         text-align: right;
       }
-      td {
-            word-wrap: break-word;
-            word-break: break-word;
-            white-space: normal;
-            padding-left: 10px; 
-            
+      select {
+        width: 100%;
+        height: 40px;
       }
+      button.btn {
+        width: 100%;
+      }
+      /* .pix_floodmark {
+        width: 65%;
+      } */
       @media only screen and (max-width: 480px) {
         .pix_floodmark {
           width: 50%;
@@ -170,12 +139,43 @@
           font-size: 2vw;
         }
         .text {
-          font-size: 24px;
+          font-size: 18px;
         }
         .texth {
-          font-size: 26px;
+          font-size: 22px;
           margin: 10px 0;
           padding: 10px;
+        }
+      }
+      /* #fix-header {
+        font-size: 16px;
+      } */
+      th {
+        text-align: center;
+      }
+      .btn {
+        padding: 5px 15px;
+      }
+      @media screen and (max-width: 600px) {
+        div.find {
+          width: 80%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .texth {
+          font-size: 22px;
+          margin: 10px 0;
+          padding: 10px;
+        }
+        .text {
+          font-size: 18px;
+          margin: 10px 0;
+          padding: 10px;
+          text-indent: 2em;
+          text-align: justify;
+          line-height: 1.6;
         }
       }
     </style>

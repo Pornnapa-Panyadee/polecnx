@@ -109,7 +109,7 @@
         .leveltable {
             text-align: right;
             margin-top: -10px;
-            margin-left: 80px;
+            margin-left: 70px;
         }
 
         .download-btn {
@@ -216,8 +216,8 @@
                                                                                         &#9900; ระดับน้ำท่วมสูงจากผิวถนน<br>
                                                                                         <table class="leveltable">
                                                                                             <tr>
-                                                                                                <td width=75%><font class="levelwater">{{$data[0]['water_level']}}</font></td>
-                                                                                                <td width=25% style="vertical-align: bottom;">ซม.</td>
+                                                                                                <td width=65%><font class="levelwater">{{$data[0]['water_level']}}</font></td>
+                                                                                                <td width=35% style="vertical-align: bottom;">ซม.</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                         &#9900; วันที่ถ่ายภาพ {{$data[0]['date_survey']}}
