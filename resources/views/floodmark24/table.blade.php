@@ -1,177 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8">
-    <title>CM Flood Mark 2024 : เครื่องหมายระดับน้ำท่วมเมืองเชียงใหม่ ปี 2567 </title>
-
+    <title>CM Flood Mark 2024 : เครื่องหมายระดับน้ำท่วมเมืองเชียงใหม่ ปี 2567</title>
 
     <link rel="icon" href="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Mitr|Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('fonts/feather/feather.css')}}"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/form/themify-icons.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/form/icofont.css')}}"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/datatables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/buttons.datatables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/responsive.bootstrap4.min.css')}}">
-
     <link rel="stylesheet" href="{{ asset('css/form/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form/waves.min.css')}}" type="text/css" media="all">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/jquery.steps.css')}}">
     <link rel="stylesheet" href="{{ asset('css/form/feather.css')}}">
     <link rel="stylesheet" href="{{ asset('css/form/style1.css')}}">
-
     <!-- leaflet -->
     
     <link rel="stylesheet" href="{{ asset('css/form/leaflet.css')}}" crossorigin=""/>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
 
-    <style type="text/css">
-      .texth{
+    <style>
+        .container1 {
+            width: 100%;
+            position: relative;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: #bce0ff;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            background-color: #bce0ff;
+            border-style: solid;
+            border-color: rgb(8, 8, 8);
+            border-width: 0 2px 2px 2px;
+            align-items: center;
+        }
+
+        .logo {
+            margin-top: 40px;
+            margin-left: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15%;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 98%;
+        }
+
+        .details {
+            width: 85%;
+            font-size: 18px;
+            border-style: solid;
+            border-color: rgb(8, 8, 8);
+            border-width: 0 0 0 2px;
+        }
+
+        .details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details ul li {
+            margin-bottom: 10px;
+        }
+
+        .top-row {
+            display: flex;
+            flex-direction: row;
+            border-style: solid;
+            border-color: rgb(8, 8, 8);
+            border-width: 2px;
+        }
+
+        .top-row img {
+            margin: 5px 0 5px 5px;
+            width: 49.4%;
+        }
+
+        table {
+            margin-left: 15px;
+            vertical-align: top;
+        }
+
+        .levelwater {
+            font-size: 48px;
+            text-align: right;
+        }
+
+        td {
+            display: table-cell;
+            vertical-align: top;
+            unicode-bidi: isolate;
+        }
+        .texth {
         font-size: 20px;
-        margin: 2px;
-        padding:5px;
-        text-align:center;
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
       }
-      .text{
+      .text {
         font-size: 16px;
-        margin: 2px;
-        padding:5px;
+        margin: 10px 0;
+        padding: 10px;
         text-indent: 2em;
-        text-align:justify;
+        text-align: justify;
+        line-height: 1.6;
       }
-      .leaflet-popup-content-wrapper,.leaflet-popup-content{
+      .leaflet-popup-content-wrapper, .leaflet-popup-content {
         width: 400px;
-        margin: 5px;
+        margin: 10px auto;
       }
-      #map{
-			  font-family: Mitr, sans-serif;
-			  height: 720px;
-			  display: block;
+      #map {
+        font-family: 'Mitr', sans-serif;
+        height: 720px;
         margin: auto;
         text-align: left;
         font-size: 14px;
-			}
-		  #map.table {
-		    font-family: 'Mitr', sans-serif;
-		    width: 100%;
-		  }#map.tr {
-		    padding: 15px;
-		    text-align: right;
-		  }#map.td {
-		    padding: 15px;
-		    text-align: right;
       }
-      select{
-        width: 100%;
-        height: 40px;
-      }
-      button.btn {
+      #map.table {
+        font-family: 'Mitr', sans-serif;
         width: 100%;
       }
-      .pix_floodmark{
-        width: 65%;
+      #map.tr, #map.td {
+        padding: 15px;
+        text-align: right;
       }
-      @media only screen and (max-width:480px) {
-         .pix_floodmark{
-              width: 50%;
-          }
-            #map{
-                height: 450px;
-                font-size: 14px;
-            }
-            table{
-                font-size: 2vw;
-            }
-            select{
-            width: 100%;
-            height: 40px;
-            }
-            button.btn{
-            width: 100%;
-            }
-            .btn-sm{
-                font-size: 2vw;
-            }
-            .text{
-              font-size: 18px;
-            }
-          .texth{
-            font-size: 22px;
-            margin: 2px;
-            padding:5px;
-            text-align:center;
-          }
-          .text{
-            font-size: 18px;
-            margin: 2px;
-            padding:5px;
-            text-indent: 2em;
-            text-align:justify;
-          }
+      td {
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+            padding-left: 10px; 
+            
+      }
+      @media only screen and (max-width: 480px) {
+        .pix_floodmark {
+          width: 50%;
         }
-      #fix-header{
-        font-size:16px;
+        #map {
+          height: 450px;
+          font-size: 14px;
+        }
+        table {
+          font-size: 2vw;
+        }
+        select {
+          width: 100%;
+          height: 40px;
+        }
+        button.btn {
+          width: 100%;
+        }
+        .btn-sm {
+          font-size: 2vw;
+        }
+        .text {
+          font-size: 24px;
+        }
+        .texth {
+          font-size: 26px;
+          margin: 10px 0;
+          padding: 10px;
+        }
       }
-      th{
-        text-align:center;
-      }
-      .btn{
-        padding:2px 12px;
-      }
-      @media screen and (max-width: 600px) {
-          div.find {
-            width: 80%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .texth{
-            font-size: 22px;
-            margin: 2px;
-            padding:5px;
-            text-align:center;
-          }
-          .text{
-            font-size: 18px;
-            margin: 2px;
-            padding:5px;
-            text-indent: 2em;
-            text-align:justify;
-          }
-      }
-     </style>
-
     </style>
+</head>
 
-
-  </head>
-
-  <body class="horizontal-icon-fixed" >
+<body class="horizontal-icon-fixed">
     @yield('content')
+
     <div class="loader-bg">
         <div class="loader-bar"></div>
     </div>
 
-    <div id="pcoded" class="pcoded" >
-      <div class="pcoded-overlay-box"></div>
-      
-      <div class="pcoded-container navbar-wrapper">
-        @include('menu.header_pole')
-        @include('menu.slidebar')
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
 
-        <div class="pcoded-main-container">
-          <div class="pcoded-wrapper">
-            
-            <!-- Map -->
-            <div class="pcoded-content">
-              <!-- <div class="card"><h3></h3></div> -->
-              <div class="pcoded-inner-content">
-                <div class="main-body" style="margin-top:20px">
+        <div class="pcoded-container navbar-wrapper">
+            @include('menu.header_pole')
+            @include('menu.slidebar')
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body" style="margin-top:20px">
                   <div class="page-wrapper">
                     <div class="page-body">
                       <div class="row" style="margin-top:20px">
@@ -184,7 +212,7 @@
                                   <p>โดย มหาวิทยาลัยเชียงใหม่</p></center><hr>
                                 </div>
                                 
-                                </div>
+                              </div>
                               <div class="row">
                                 <div class="col-md-12 col-xl-2">
                                   
@@ -198,13 +226,12 @@
                                     เชิงสะพานนวรัฐ ซึ่งเกิดน้ำท่วมใหญ่ในเดือนตุลาคม พ.ศ. 2567 โดยที่ P1 = 5.30 เมตร
                                     <center>
                                     <br>
-                                    <img  class="pix_floodmark" src="{{ asset('images/icon/floodmark.jpg') }}"  style="border: 1px solid black;"> <br> <p>ตัวอย่าง เครื่องหมายระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p> </center>
+                                    <img  src="{{ asset('images/icon/floodmark.jpg') }}" width=50% > <br> <p>ตัวอย่าง เครื่องหมายระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p> </center>
                                      <br>
                                     <img  src="{{ asset('images/icon/flood_ref.png') }}" width=100%  >  
                                   </center>
                                   
                                   </p>
-                                
                                 </div>
                                 
                                 
@@ -286,20 +313,15 @@
 
                   
                 </div>
-              </div>
+                        </div>
+                    </div>
 
-             
-            </div>  
-          </div>
-            @include('menu.foot')
-          </div>
-          
+                    @include('menu.foot')
+                </div>
+            </div>
         </div>
-
-      </div>
     </div>
-    
-    
+
     <script src="{{ asset('js/form/jquery.min.js')}}"></script>
     <script src="{{ asset('js/form/jquery-ui.min.js')}}"></script>
     <script src="{{ asset('js/form/bootstrap.min.js')}}"></script>
@@ -519,6 +541,6 @@
 
   
     <!-- End Map  -->
-  </body>
+</body>
 
 </html>

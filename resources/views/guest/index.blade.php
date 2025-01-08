@@ -92,7 +92,7 @@
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-12 col-xl-6">
+                                  <div class="col-md-12 col-xl-4">
                                     <br>
                                     <div class="cardbox">
                                       <div class="Feautes">
@@ -107,7 +107,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="col-md-12 col-xl-6">
+                                  <div class="col-md-12 col-xl-4">
                                     <br>
                                     <div class="cardbox">
                                       <div class="Feautes">
@@ -119,6 +119,22 @@
                                             </a>
                                           </div>
                                           <p style="margin-top: 80px; text-align: center;color: #fff;">แผนที่เสี่ยงภัยน้ำท่วม (Flood Hazard Map)</p>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  <div class="col-md-12 col-xl-4">
+                                    <br>
+                                    <div class="cardbox">
+                                      <div class="Feautes">
+                                          <div class="single-features">
+                                            <a href="{{ asset('/flood24') }}" target="_blank" >
+                                                <div class="signle-icon">
+                                                    <i class="icofont icofont-water-drop"></i>
+                                                </div>
+                                            </a>
+                                          </div>
+                                          <p style="margin-top: 80px; text-align: center;color: #fff;">เครื่องหมายระดับน้ำท่วม (Flood Mark 2024)</p>
                                       </div>
                                     </div>
                                     
