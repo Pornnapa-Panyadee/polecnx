@@ -96,14 +96,16 @@
                                     <br>
                                     <div class="cardbox">
                                       <div class="Feautes">
-                                          <div class="single-features">
+                                          <!-- <div class="single-features"> -->
                                             <a href="{{ asset('/pole') }}" target="_blank" >
-                                                <div class="signle-icon">
+                                              <img  src="{{ asset('images/banner/pole.png') }}" width=100% >
+                                                <!-- <div class="signle-icon">
                                                     <i class="icofont icofont-pencil-alt-3"></i>
-                                                </div>
+                                                    
+                                                </div> -->
                                             </a>
-                                          </div>
-                                          <p style="margin-top: 80px; text-align: center; color: #fff;">ข้อมูลหลักระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p>
+                                          <!-- </div> -->
+                                          <!-- <p style="margin-top: 80px; text-align: center; color: #fff;">ข้อมูลหลักระดับน้ำท่วมในพื้นที่เขตเมืองเชียงใหม่</p> -->
                                       </div>
                                     </div>
                                   </div>
@@ -111,14 +113,15 @@
                                     <br>
                                     <div class="cardbox">
                                       <div class="Feautes">
-                                          <div class="single-features">
+                                          <!-- <div class="single-features"> -->
                                             <a href="{{ asset('/floodmap') }}" target="_blank" >
-                                                <div class="signle-icon">
+                                              <img  src="{{ asset('images/banner/hazardmap.png') }}" width=100% >
+                                                <!-- <div class="signle-icon">
                                                     <i class="icofont icofont-map"></i>
-                                                </div>
+                                                </div> -->
                                             </a>
-                                          </div>
-                                          <p style="margin-top: 80px; text-align: center;color: #fff;">แผนที่เสี่ยงภัยน้ำท่วม (Flood Hazard Map)</p>
+                                          <!-- </div> -->
+                                          <!-- <p style="margin-top: 80px; text-align: center;color: #fff;">แผนที่เสี่ยงภัยน้ำท่วม (Flood Hazard Map)</p> -->
                                       </div>
                                     </div>
                                     
@@ -127,14 +130,16 @@
                                     <br>
                                     <div class="cardbox">
                                       <div class="Feautes">
-                                          <div class="single-features">
+                                          <!-- <div class="single-features"> -->
                                             <a href="{{ asset('/flood24') }}" target="_blank" >
-                                                <div class="signle-icon">
-                                                    <i class="icofont icofont-water-drop"></i>
+                                                <!-- <div class="signle-icon"> -->
+                                                  <img  src="{{ asset('images/banner/floodmark.png') }}" width=100% >
+                                                  
+                                                  <!-- <i class="icofont icofont-water-drop"></i> -->
                                                 </div>
                                             </a>
-                                          </div>
-                                          <p style="margin-top: 80px; text-align: center;color: #fff;">เครื่องหมายระดับน้ำท่วม (Flood Mark 2024)</p>
+                                          <!-- </div> -->
+                                          <!-- <p style="margin-top: 80px; text-align: center;color: #fff;">เครื่องหมายระดับน้ำท่วม (Flood Mark 2024)</p> -->
                                       </div>
                                     </div>
                                     
