@@ -19,7 +19,8 @@ Route::get('map/getDataSurvey/{compass}', 'App\Http\Controllers\PolelocationCont
 Route::get('/pole', 'App\Http\Controllers\PolelocationController@getDataHomeTable');
 Route::get('/floodmap', function () { return view('guest.floodmap');});
 
-Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable');
+Route::get('/flood24', function () { return view('floodmark24.underconstruction');});
+// Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable');
 Route::get('flood24/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
 Route::get('/flood24/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
 Route::get('/flood24/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
