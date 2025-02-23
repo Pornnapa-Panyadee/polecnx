@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\FloodMark; 
 use App\Models\ImageFloodmark; 
+use App\Models\User;
+use Auth;
 
 class FormaddfloodmarkController extends Controller
 {
@@ -70,12 +72,16 @@ class FormaddfloodmarkController extends Controller
         // return redirect()->route("form.result");          
     }
 
-    public function getTable() {
-        $data = FloodMark::select('*')->get();
-        // $data = FloodMark::select('*')->get();
-        // dd($pole[0]->pole_id);
-        return view('form.table',compact('data'));      
+    public function getTable(User $user) {
+        // Check if the user is authenticated
+        if (Auth::check() && Auth::user()->is_admin !== null && Auth::user()->is_admin == 1) {
+            $data = FloodMark::select('*')->get();
+            return view('form.table', compact('data')); 
+        } else {
+            return redirect('/flood24');
+        }
     }
+
 
     public function getImage($code=0) {
         $image = ImageFloodmark::select('*')->where('code_mark',$code)->get();

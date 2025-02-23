@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8">
-    <title>CM : หลักระดับน้ำท่วม </title>
+    <title>CM Flood Mark 2024 : เครื่องหมายระดับน้ำท่วมเมืองเชียงใหม่ ปี 2567 </title>
 
     <link rel="icon" href="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Mitr|Prompt" rel="stylesheet">
@@ -22,11 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/jquery.steps.css')}}">
     <link rel="stylesheet" href="{{ asset('css/form/feather.css')}}">
     <link rel="stylesheet" href="{{ asset('css/form/style1.css')}}">
-
-    <!-- Bootstrap CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
     <style type="text/css">
       .text-h{
@@ -52,8 +47,8 @@
       }
     </style>
 </head>
-<body class="horizontal-icon-fixed">
-  @yield('content')
+<body class="horizontal-icon-fixed" >
+    @yield('content')
     <div class="loader-bg">
         <div class="loader-bar"></div>
     </div>

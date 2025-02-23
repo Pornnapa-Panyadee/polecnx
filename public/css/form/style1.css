@@ -526,8 +526,8 @@ code {
 
 .sub-title {
     border-bottom: 1px solid rgba(204, 204, 204, 0.35);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    /* padding-bottom: 10px;
+    margin-bottom: 10px; */
     font-size: 14px;
     font-weight: 400;
     color: #2c3e50;

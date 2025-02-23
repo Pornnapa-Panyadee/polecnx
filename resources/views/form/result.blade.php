@@ -68,8 +68,9 @@
       <div class="pcoded-overlay-box"></div>
       
       <div class="pcoded-container navbar-wrapper">
-        @include('menu.header')
-        @include('menu.slidebar')
+        <!-- @include('menu.header')
+        @include('menu.slidebar') -->
+         @include('menu.header_admin')
 
         <div class="pcoded-main-container">
           <div class="pcoded-wrapper">
@@ -90,8 +91,8 @@
                                     <br><br>
                                     <h3>หมุดน้ำท่วม 2567 (Flood Mark 2024)</h3><br>
                                     <h1>บันทึกข้อมูลเรียบร้อย!</h1><br>
-                                    <a href="{{ url('/flood24/form')}}"><h3><button class="btn btn-primary text">กรอกข้อมูลหมุดน้ำท่วมเพิ่ม</button></h3></a>
-                                    <a href="{{ url('/flood24/table')}}"><h3><button class="btn btn-success text">ตารางสรุปข้อมูล</button></h3></a><br>
+                                    <a href="{{ url('/flood24/admin/form')}}"><h3><button class="btn btn-primary text">กรอกข้อมูลหมุดน้ำท่วมเพิ่ม</button></h3></a>
+                                    <a href="{{ url('/flood24/admin/table')}}"><h3><button class="btn btn-success text">ตารางสรุปข้อมูล</button></h3></a><br>
                                     <hr>
                                 </div>                     
                             </div>

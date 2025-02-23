@@ -68,8 +68,9 @@
       <div class="pcoded-overlay-box"></div>
       
       <div class="pcoded-container navbar-wrapper">
-        @include('menu.header')
-        @include('menu.slidebar')
+        <!-- @include('menu.header')
+        @include('menu.slidebar') -->
+        @include('menu.header_admin')
 
         <div class="pcoded-main-container">
           <div class="pcoded-wrapper">
@@ -110,9 +111,9 @@
                                  <div class="col-md-8 mx-auto">  
                                   <table width="100%" style="text-align: center;">
                                     <tr>
-                                      <td width="45%"><a href="{{ url('/flood24/form')}}"><button class="btn btn-primary text">กรอกข้อมูลหมุดน้ำท่วมเพิ่ม</button></a></td>
+                                      <td width="45%"><a href="{{ url('/flood24/admin/form')}}"><button class="btn btn-primary text">กรอกข้อมูลหมุดน้ำท่วมเพิ่ม</button></a></td>
                                       <td width="10%">
-                                      <td width="45%"><a href="{{ url('/flood24/table')}}"><button class="btn btn-success text">ตารางสรุปข้อมูล</button></a><br></td>
+                                      <td width="45%"><a href="{{ url('/flood24/admin/table')}}"><button class="btn btn-success text">ตารางสรุปข้อมูล</button></a><br></td>
                                     </tr>
                                   </table>   
                                     <hr>

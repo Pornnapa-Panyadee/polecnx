@@ -70,8 +70,9 @@
       <div class="pcoded-overlay-box"></div>
       
       <div class="pcoded-container navbar-wrapper">
-        @include('menu.header')
-        @include('menu.slidebar')
+        <!-- @include('menu.header')
+        @include('menu.slidebar') -->
+        @include('menu.header_admin')
 
         <div class="pcoded-main-container">
           <div class="pcoded-wrapper">
@@ -88,7 +89,7 @@
                           <div class="card table-card">
                             <div class="card-header">
                               <div class="topnav-right">
-                                <div> <a href="{{ url('/flood24/table')}}"><button class="btn btn-success">ตารางสรุปข้อมูล</button></a></div>
+                                <div> <a href="{{ url('/flood24/admin/table')}}"><button class="btn btn-success">ตารางสรุปข้อมูล</button></a></div>
                               </div>
                                  <div class="container mt-2" >
                                     
