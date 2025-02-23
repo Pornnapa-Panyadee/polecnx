@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-
-
-
+use App\Http\Controllers\Auth\RegisterController;
 
 
 Route::get('/', function () { return view('guest.index');});
@@ -45,13 +43,15 @@ Route::get('/genpng', function () { return view('genImage.genPNG');});
 
 
 // Auth Flood Mark 2024
-
+Route::get('/flood24/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/flood24/register', [RegisterController::class, 'register']);
 
 
 Route::prefix('/flood24/admin')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    
     Route::get('/', 'App\Http\Controllers\AdminController@adminHome')->name('admin.home')->middleware('is_admin');
     Route::get('/table', 'App\Http\Controllers\FormaddfloodmarkController@getTable')->name('admin.table');
     Route::get('/form', function () { return view('form.add');});
@@ -67,3 +67,5 @@ Route::prefix('/flood24/admin')->group(function () {
 Route::get('/flood24/admin', function () {
     return redirect('/flood24');
 })->middleware('guest');
+
+
