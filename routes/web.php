@@ -22,8 +22,8 @@ Route::get('/floodmap', function () { return view('guest.floodmap');});
 
 // Flood Mark CM 2024
 
-// Route::get('/flood24', function () { return view('floodmark24.underconstruction');});
-Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
+Route::get('/flood24', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
+// Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
 Route::get('flood24/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
 Route::get('/flood24/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
 Route::get('/flood24/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
