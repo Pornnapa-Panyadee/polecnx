@@ -18,8 +18,8 @@ class floodmark24Controller extends Controller
 
     public function getDataSurveyLevel($level=0) {
         header('Access-Control-Allow-Origin: *');
-        $lower=[0,0,50,100,150];
-        $upper=[0,50,100,150,300];
+        $lower=[0,0,50,100,150,200];
+        $upper=[0,50,100,150,200,400];
         $location = FloodMark::select('*')->where('water_level', '>', $lower[$level])->where('water_level', '<=', $upper[$level])->get();
         //dd($location);
         for ($i=0;$i<count($location);$i++){ 

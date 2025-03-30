@@ -283,6 +283,7 @@
       var station2 = new L.LayerGroup();
       var station3 = new L.LayerGroup();
       var station4 = new L.LayerGroup();
+      var station5 = new L.LayerGroup();
     
       var borders= new L.LayerGroup();
       var x = 18.787563; 
@@ -294,7 +295,7 @@
           osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
       var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,borders],
+          layers: [osmBw,station1,station2,station3,station4,station5,borders],
           center: [x,y],
           zoom: 13,
         });
@@ -335,6 +336,13 @@
           iconAnchor: [25, 0],
           popupAnchor: [-10, 0]
         });
+      var pin_purple = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_purple.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_purple.png') }}',
+          iconSize: [30, 35],
+          iconAnchor: [25, 0],
+          popupAnchor: [-10, 0]
+        });
 
       var pinMO_red = L.icon({
           iconUrl: '{{ asset('images/icon/flood_red.png') }}',
@@ -364,6 +372,13 @@
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
+      var pinMO_purple = L.icon({
+          iconUrl: '{{ asset('images/icon/flood_purple.png') }}',
+          iconRetinaUrl:'{{ asset('images/icon/flood_purple.png') }}',
+          iconSize: [15, 20],
+          iconAnchor: [5, 30],
+          popupAnchor: [0, 0]
+        });
       var pinMO = L.icon({
           iconUrl: '{{ asset('images/icon/flood2.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
@@ -384,8 +399,8 @@
       function addPin(ampName,mo,pi){
         $.getJSON("{{ asset('flood24/getDataSurveyLevel') }}"+"/"+pi, 
           function (data){
-            const icon_pin = [pin,pin_green, pin_yellow, pin_orange, pin_red]; // Use actual icon objects
-            const icon_pinMO = [pinMO,pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red]; // Use actual icon objects
+            const icon_pin = [pin,pin_green, pin_yellow, pin_orange, pin_red,pin_purple]; // Use actual icon objects
+            const icon_pinMO = [pinMO,pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red,pinMO_purple]; // Use actual icon objects
             let pin_2;
             
             // icon_pin=["pin_green","pin_yellow","pin_orange","pin_red"];
@@ -429,6 +444,7 @@
       addPin(station3,mo,2);
       addPin(station4,mo,1);
       addPin(station1,mo,4);
+      addPin(station5,mo,5);
 
       var baseTree = {
           label: 'BaseLayers',
@@ -447,26 +463,14 @@
                 { label:" 0 - 50 ซม.",layer: station4},
                 { label:" 50 - 100 ซม.",layer: station3},
                 { label:" 100 - 150 ซม.",layer: station2},
-                { label:" > 150 ซม.",layer: station1}
+                { label:" 150 - 200 ซม.",layer: station1},
+                { label:" > 200 ซม.",layer: station5}
           ]
         }];
         
         ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
 
-
     </script>
-    <!-- <script>
-      $(document).ready(function() {
-          if (!$.fn.DataTable.isDataTable('#fix-header')) {
-              $('#fix-header').DataTable({
-                  "pageLength": 25 // Set the number of rows to display to 20
-              });
-          }
-      });
-    </script> -->
-
-  
-    <!-- End Map  -->
   </body>
 
 </html>
