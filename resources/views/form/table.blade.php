@@ -285,7 +285,9 @@
       var station4 = new L.LayerGroup();
       var station5 = new L.LayerGroup();
     
-      var borders= new L.LayerGroup();
+      var cnx= new L.LayerGroup();
+      var lpn= new L.LayerGroup();
+
       var x = 18.787563; 
       var y = 99.003968;
       var mbAttr = 'Chiang Mai ',
@@ -295,7 +297,7 @@
           osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
       var map = L.map('map', {
-          layers: [osmBw,station1,station2,station3,station4,station5,borders],
+          layers: [osmBw,station1,station2,station3,station4,station5,cnx,lpn],
           center: [x,y],
           zoom: 13,
         });
@@ -386,6 +388,14 @@
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
+      
+      omnivore.kml('../../kml/CNX.kml').on('ready', function () {
+            this.setStyle({ fillOpacity: 0.6, color: "#3d98ff", weight: 0 });
+        }).addTo(cnx);
+
+      omnivore.kml('../../kml/LPN.kml').on('ready', function () {
+            this.setStyle({ fillOpacity: 0.6, color: "#3d98ff", weight: 0 });
+        }).addTo(lpn);
            
      function checkname(name){
         if(name!=null){
@@ -456,19 +466,30 @@
       var ctl = L.control.layers.tree(baseTree, null);
       ctl.addTo(map).collapseTree().expandSelected();
 
-      var overlays = [{
+      var overlays = [
+        {
           label: ' พื้นที่ของแม่น้ำปิง',
           selectAllCheckbox: true,
           children: [
-                { label:" 0 - 50 ซม.",layer: station4},
-                { label:" 50 - 100 ซม.",layer: station3},
-                { label:" 100 - 150 ซม.",layer: station2},
-                { label:" 150 - 200 ซม.",layer: station1},
-                { label:" > 200 ซม.",layer: station5}
+            { label: " 0 - 50 ซม.", layer: station4 },
+            { label: " 50 - 100 ซม.", layer: station3 },
+            { label: " 100 - 150 ซม.", layer: station2 },
+            { label: " 150 - 200 ซม.", layer: station1 },
+          { label: " > 200 ซม.", layer: station5 }
           ]
-        }];
-        
-        ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
+        },
+        {
+          label: ' พื้นที่น้ำท่วม',
+          selectAllCheckbox: true,
+          children: [
+            { label: " จ.เชียงใหม่", layer: cnx },
+            { label: " จ.ลำพูน", layer: lpn },
+          ]
+        }
+      ];
+
+      // ใส่ overlay ทั้งหมดในครั้งเดียว
+      ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
 
     </script>
   </body>
