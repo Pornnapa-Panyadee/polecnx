@@ -22,25 +22,24 @@ class floodmark24Controller extends Controller
         $upper=[0,50,100,150,200,400];
         $location = FloodMark::select('*')->where('water_level', '>', $lower[$level])->where('water_level', '<=', $upper[$level])->get();
         //dd($location);
-        for ($i=0;$i<count($location);$i++){ 
-            $image = ImageFloodmark::select('*')->where('code_mark',$location[$i]->code)->get();
-            
-            $result[] = [
-                'code'=> $location[$i]->code,
-                'date_survey'=>$location[$i]->date_survey,
-                'affected_area'=> $location[$i]->affected_area,
-                'other_detail'=>$location[$i]->other_detail,
-                'place_detail'=> $location[$i]->place_detail,
-                'latitude'=> $location[$i]->latitude,
-                'longitude'=> $location[$i]->longitude,
-                'place_around'=> $location[$i]->place_around,
-                'water_level'=> $location[$i]->water_level,
-                'tool'=> $location[$i]->tool,
-                'tool_detail'=>$location[$i]->tool_detail,
-                'note'=> $location[$i]->note,
-                'image'=>$image,
-            ];
-        }
+        $result = $location->map(function($loc) {
+        return [
+            'code' => $loc->code,
+            'date_survey' => $loc->date_survey,
+            'affected_area' => $loc->affected_area,
+            'other_detail' => $loc->other_detail,
+            'place_detail' => $loc->place_detail,
+            'latitude' => $loc->latitude,
+            'longitude' => $loc->longitude,
+            'place_around' => $loc->place_around,
+            'water_level' => $loc->water_level,
+            'tool' => $loc->tool,
+            'tool_detail' => $loc->tool_detail,
+            'note' => $loc->note,
+            'image' => $loc->images,  // images มาจากความสัมพันธ์
+        ];
+    });
+
         $result = json_encode($result);
         echo $result;
     }

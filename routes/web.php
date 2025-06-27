@@ -22,13 +22,22 @@ Route::get('/floodmap', function () { return view('guest.floodmap');});
 
 // Flood Mark CM 2024
 
-Route::get('/flood24', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
-// Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
-Route::get('flood24/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
-Route::get('/flood24/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
-Route::get('/flood24/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
+// Route::get('/flood24', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
+Route::prefix('/flood24')->group(function () {
+    Route::get('/', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
+    // Route::get('/', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
+    Route::get('/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
+    Route::get('/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
+    Route::get('/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
+    Route::get('/successupload', function () { return view('form.result');});
 
-Route::get('/flood24/successupload', function () { return view('form.result');});
+});
+
+// Route::get('/flood24', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
+// Route::get('flood24/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
+// Route::get('/flood24/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
+// Route::get('/flood24/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
+// Route::get('/flood24/successupload', function () { return view('form.result');});
 
 
 
@@ -53,6 +62,7 @@ Route::prefix('/flood24/admin')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     
     Route::get('/', 'App\Http\Controllers\AdminController@adminHome')->name('admin.home')->middleware('is_admin');
+    Route::get('/home', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
     Route::get('/table', 'App\Http\Controllers\FormaddfloodmarkController@getTable')->name('admin.table');
     Route::get('/form', function () { return view('form.add');});
     Route::get('/images/{code}', 'App\Http\Controllers\FormaddfloodmarkController@getImage');
