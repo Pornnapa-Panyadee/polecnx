@@ -24,8 +24,8 @@ Route::get('/floodmap', function () { return view('guest.floodmap');});
 
 // Route::get('/flood24', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
 Route::prefix('/flood24')->group(function () {
-    Route::get('/', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
-    // Route::get('/', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
+    // Route::get('/', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
+    Route::get('/', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
     Route::get('/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
     Route::get('/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
     Route::get('/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
