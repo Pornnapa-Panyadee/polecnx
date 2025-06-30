@@ -465,11 +465,11 @@
           popupAnchor: [0, 0]
         });
 
-        omnivore.kml('../../kml/CNX.kml').on('ready', function () {
+        omnivore.kml('../kml/CNX.kml').on('ready', function () {
             this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
         }).addTo(cnx);
 
-        omnivore.kml('../../kml/LPN.kml').on('ready', function () {
+        omnivore.kml('../kml/LPN.kml').on('ready', function () {
             this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
         }).addTo(lpn);
 
