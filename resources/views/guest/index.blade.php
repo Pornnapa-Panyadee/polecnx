@@ -83,8 +83,8 @@
                           <div class="card table-card">
                             <div class="card-header" style="margin:20px">
                              
-                                  <h4>ระบบเตรียมความพร้อมเพื่อรับมือภัยน้ำท่วมในพื้นที่เขตตัวเมืองเชียงใหม่</h4>
-                                  <h4> <b><font style="color:#3d98ff; font-weight: bolder;"> CMFlood </font></b> : Chiang Mai City Flood Preparedness System</h4>
+                                  <h4>ระบบเตือนภัยน้ำท่วมเขตเมือง จังหวัดเชียงใหม่</h4>
+                                  <h4> <b><font style="color:#3d98ff; font-weight: bolder;"> CMFlood </font></b> : Urban Flood Warning Systems in Chiang Mai</h4>
                                 <hr>
                                 <div class="row">
                                   <div class="col-md-12 col-xl-12">

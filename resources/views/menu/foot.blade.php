@@ -20,15 +20,16 @@
                     </a>
                 </td>
                 <td width="20%">
-                    <a href="https://www.chiangmai.go.th/web2556/">
-                        <img src="{{ asset('images/logo/cm.jpg') }}" width="80%">
-                    </a>
-                </td>
-                <td width="20%">
                     <a href="https://cmu.ac.th/">
                         <img src="{{ asset('images/logo/cmu.png') }}" width="90%">
                     </a>
                 </td>
+                <td width="20%">
+                    <a href="https://www.chiangmai.go.th/web2556/">
+                        <img src="{{ asset('images/logo/cm.jpg') }}" width="80%">
+                    </a>
+                </td>
+                
             </tr>
         </table>
 

@@ -174,12 +174,12 @@
       font-family: 'Mitr', sans-serif;
       font-size: 22px;
       color: #333;
-      border-top: 12px solid #3498db;
+      border: 1px solid #71b1dcff;
       border-bottom: 12px solid #3498db;
     ">
       <!-- Loader spinner -->
       <div style="position: relative; display: flex; justify-content: center; align-items: center;">
-      <div style="border: 16px solid #f3f3f3;  border-top: 16px solid #3498db;
+      <div style="border: 20px solid #f3f3f3;  border-top: 16px solid #3498db;
       border-radius: 50%; width: 148px;height: 148px;animation: spin 1s linear infinite; margin-bottom: 16px;">
       </div>
       <div id="loadingPercent" style="
@@ -192,7 +192,7 @@
       font-weight: bold;
       ">0%</div>
       </div>
-      <h3>กำลังประมวลผล</h3>
+      <h2>กำลังประมวลผล</h2>
       <h4>โปรดรอสักครู่...</h4>
     </div>
     <script>
