@@ -8,10 +8,6 @@
     <link rel="icon" href="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Mitr|Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
-
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('fonts/feather/feather.css')}}"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/form/themify-icons.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/form/icofont.css')}}"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/datatables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/buttons.datatables.min.css')}}">
@@ -24,34 +20,25 @@
     <link rel="stylesheet" href="{{ asset('css/form/style1.css')}}">
 
     <!-- leaflet -->
-    
     <link rel="stylesheet" href="{{ asset('css/form/leaflet.css')}}" crossorigin=""/>
     <script src="{{ asset('js/leaflet-omnivore.min.js')}}"  crossorigin=""></script>
-
-    <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script> -->
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
-
     <style type="text/css">
       .container1 {
             width: 100%;
             position: relative;
             align-items: center;
         }
-        table {
-            margin-left: 15px;
-            vertical-align: top;
-        }
-        td {
+        /* td {
             display: table-cell;
             vertical-align: top;
             unicode-bidi: isolate;
-        
             word-wrap: break-word;
             word-break: break-word;
             white-space: normal;
             padding-left: 10px; 
             
-        }
+        } */
       .texth {
         font-size: 20px;
         margin: 10px 0;
@@ -89,13 +76,13 @@
         width: 100%;
         height: 40px;
       }
-      /* button.btn {
+      button.btn {
         width: 100%;
-      } */
-      /* .pix_floodmark {
+      }
+      .pix_floodmark {
         width: 65%;
-      } */
-      /* @media only screen and (max-width: 480px) {
+      } 
+       @media only screen and (max-width: 480px) {
         .pix_floodmark {
           width: 50%;
         }
@@ -124,17 +111,17 @@
           margin: 10px 0;
           padding: 10px;
         }
-      } */
-      /* #fix-header {
+      } 
+      #fix-header {
         font-size: 16px;
-      } */
-      /* th {
+      } 
+      /th {
         text-align: center;
       }
       .btn {
         padding: 5px 15px;
-      } */
-      /* @media screen and (max-width: 600px) {
+      } 
+      /@media screen and (max-width: 600px) {
         div.find {
           width: 80%;
           text-align: center;
@@ -155,33 +142,89 @@
           text-align: justify;
           line-height: 1.6;
         }
-      } */
+      } 
+    </style>
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     </style>
   
 
   </head>
 
   <body class="horizontal-icon-fixed" >
-    @yield('content')
-    <div class="loader-bg">
-        <div class="loader-bar"></div>
+    <!-- Loader Popup -->
+    <div id="loadingOverlay" style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 600px;
+      min-height: 520px;
+      background: rgba(255,255,255,0.95);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      font-family: 'Mitr', sans-serif;
+      font-size: 22px;
+      color: #333;
+      border-top: 12px solid #3498db;
+      border-bottom: 12px solid #3498db;
+    ">
+      <!-- Loader spinner -->
+      <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+      <div style="border: 16px solid #f3f3f3;  border-top: 16px solid #3498db;
+      border-radius: 50%; width: 148px;height: 148px;animation: spin 1s linear infinite; margin-bottom: 16px;">
+      </div>
+      <div id="loadingPercent" style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      color: #3498db;
+      font-weight: bold;
+      ">0%</div>
+      </div>
+      <h3>กำลังประมวลผล</h3>
+      <h4>โปรดรอสักครู่...</h4>
     </div>
+    <script>
+      // ตัวอย่างการอัปเดตเปอร์เซ็นต์ (สามารถปรับให้แสดงจริงตามการโหลดข้อมูล)
+      let percent = 0;
+      const percentElem = document.getElementById('loadingPercent');
+      const interval = setInterval(function() {
+      percent += Math.floor(Math.random() * 15) + 5;
+      if(percent > 100) percent = 100;
+      percentElem.textContent = percent + '%';
+      if(percent === 100) clearInterval(interval);
+      }, 300);
+    </script>
+
+    @yield('content')
+    <!-- <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div> -->
 
     <div id="pcoded" class="pcoded" >
-      <div class="pcoded-overlay-box"></div>
-      
+      <!-- <div class="pcoded-overlay-box"></div> -->
+      @include('menu.header')
+      <!-- @include('menu.header_pole') -->
+      <!-- @include('menu.slidebar') -->
       <div class="pcoded-container navbar-wrapper">
-        @include('menu.header_pole')
-        @include('menu.slidebar')
-
         <div class="pcoded-main-container">
           <div class="pcoded-wrapper">
-            
             <!-- Map -->
             <div class="pcoded-content">
               <!-- <div class="card"><h3></h3></div> -->
               <div class="pcoded-inner-content">
-                <div class="main-body" style="margin-top:20px">
+                <div class="main-body" >
                   <div class="page-wrapper">
                     <div class="page-body">
                       <div class="row" style="margin-top:20px">
@@ -303,8 +346,7 @@
              
             </div>  
           </div>
-            @include('menu.foot')
-          
+          @include('menu.foot')
         </div>
 
       </div>
@@ -319,9 +361,6 @@
     <script src="{{ asset('js/form/menu-hori-fixed.js')}}" ></script>
     <script src="{{ asset('js/form/jquery.mcustomscrollbar.concat.min.js')}}" ></script>
     <script src="{{ asset('js/form/script.js')}}"></script>
-    <script async  src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    
-    
   
     <script src="{{ asset('js/form/jquery.datatables.min.js')}}" ></script>
     <script src="{{ asset('js/form/datatables.buttons.min.js')}}" ></script>
@@ -340,10 +379,19 @@
     <script src= "{{ asset('js/form/jquery.mcustomscrollbar.concat.min.js') }}"></script>
 
     <script src= "{{ asset('js/form/script.js') }}"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" ></script>
-  
-    <script src="{{ asset('js/form/rocket-loader.min.js')}}" data-cf-settings="ce2668daaac54a74e9f6cdff-|49" defer=""></script>
-
+    <script>
+      window.onload = function() {
+        var loader = document.getElementById('loadingOverlay');
+        if(loader) {
+          // ค่อยๆ ลดความทึบ (fade out) ก่อนซ่อน
+          loader.style.transition = "opacity 0.5s ease";
+          loader.style.opacity = 0;
+          setTimeout(function() {
+            loader.style.display = 'none';
+          }, 500); // รอให้ fade out เสร็จก่อนซ่อนจริง
+        }
+      }
+    </script>
     
     <!-- Map script -->
     <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css')}}" crossorigin=""/>

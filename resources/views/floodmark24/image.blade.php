@@ -42,9 +42,9 @@
         font-size: 20px;
         width: 75%;
       }
-      td{
+      /* td{
         padding-left:10px;
-      }
+      } */
     </style>
 </head>
 <body class="horizontal-icon-fixed" >

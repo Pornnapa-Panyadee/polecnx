@@ -57,9 +57,9 @@
 
   <body class="horizontal-icon-fixed" >
     @yield('content')
-    <div class="loader-bg">
+    <!-- <div class="loader-bg">
         <div class="loader-bar"></div>
-    </div>
+    </div> -->
 
     <div id="pcoded" class="pcoded" >
       <div class="pcoded-overlay-box"></div>
