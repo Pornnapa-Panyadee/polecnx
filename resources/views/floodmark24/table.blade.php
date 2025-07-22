@@ -621,43 +621,6 @@
       // ใส่ overlay ทั้งหมดในครั้งเดียว
       ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
 
-      // ฟังก์ชันใส่สีตัวหนังสือใน label overlay
-      function colorOverlayLabels() {
-        const labels = document.querySelectorAll(
-          ".leaflet-control-layers-tree .leaflet-control-layers-group label"
-        );
-
-        labels.forEach((label) => {
-          const text = label.textContent.trim();
-
-          switch (text) {
-            case "0 - 50 ซม.":
-              label.style.color = "green";
-              break;
-            case "50 - 100 ซม.":
-              label.style.color = "yellow";
-              break;
-            case "100 - 150 ซม.":
-              label.style.color = "orange";
-              break;
-            case "150 - 200 ซม.":
-              label.style.color = "red";
-              break;
-            case "> 200 ซม.":
-              label.style.color = "purple";
-              break;
-            case "จ.เชียงใหม่":
-              label.style.color = "blue";
-              break;
-            case "จ.ลำพูน":
-              label.style.color = "cyan";
-              break;
-          }
-        });
-      }
-
-      // เรียกใส่สีหลัง control สร้างเสร็จ
-      setTimeout(colorOverlayLabels, 300);
     
     </script>
 
