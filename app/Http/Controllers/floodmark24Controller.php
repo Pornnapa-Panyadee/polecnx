@@ -16,32 +16,64 @@ class floodmark24Controller extends Controller
         return view('floodmark24.table',compact('data'));      
     }
 
-    public function getDataSurveyLevel($level=0) {
-        header('Access-Control-Allow-Origin: *');
-        $lower=[0,0,50,100,150,200];
-        $upper=[0,50,100,150,200,400];
-        $location = FloodMark::select('*')->where('water_level', '>', $lower[$level])->where('water_level', '<=', $upper[$level])->get();
-        //dd($location);
-        $result = $location->map(function($loc) {
-        return [
-            'code' => $loc->code,
-            'date_survey' => $loc->date_survey,
-            'affected_area' => $loc->affected_area,
-            'other_detail' => $loc->other_detail,
-            'place_detail' => $loc->place_detail,
-            'latitude' => $loc->latitude,
-            'longitude' => $loc->longitude,
-            'place_around' => $loc->place_around,
-            'water_level' => $loc->water_level,
-            'tool' => $loc->tool,
-            'tool_detail' => $loc->tool_detail,
-            'note' => $loc->note,
-            'image' => $loc->images,  // images มาจากความสัมพันธ์
-        ];
-    });
+    // public function getDataSurveyLevel($level=0) {
+    //     header('Access-Control-Allow-Origin: *');
+    //     $lower=[0,0,50,100,150,200];
+    //     $upper=[0,50,100,150,200,400];
+    //     $location = FloodMark::select('*')->where('water_level', '>', $lower[$level])->where('water_level', '<=', $upper[$level])->get();
+    //     //dd($location);
+    //     $result = $location->map(function($loc) {
+    //     return [
+    //         'code' => $loc->code,
+    //         'date_survey' => $loc->date_survey,
+    //         'affected_area' => $loc->affected_area,
+    //         'other_detail' => $loc->other_detail,
+    //         'place_detail' => $loc->place_detail,
+    //         'latitude' => $loc->latitude,
+    //         'longitude' => $loc->longitude,
+    //         'place_around' => $loc->place_around,
+    //         'water_level' => $loc->water_level,
+    //         'tool' => $loc->tool,
+    //         'tool_detail' => $loc->tool_detail,
+    //         'note' => $loc->note,
+    //         'image' => $loc->images,  // images มาจากความสัมพันธ์
+    //     ];
+    // });
 
-        $result = json_encode($result);
-        echo $result;
+    //     $result = json_encode($result);
+    //     echo $result;
+    // }
+
+    public function getDataSurveyLevel($level = 0)
+    {
+        header('Access-Control-Allow-Origin: *');
+
+        // ถ้า level = 0 ให้ไม่กรอง class
+        if ($level == 0) {
+            $location = FloodMark::all();
+        } else {
+            $location = FloodMark::where('class', $level)->get();
+        }
+
+        $result = $location->map(function ($loc) {
+            return [
+                'code' => $loc->code,
+                'date_survey' => $loc->date_survey,
+                'affected_area' => $loc->affected_area,
+                'other_detail' => $loc->other_detail,
+                'place_detail' => $loc->place_detail,
+                'latitude' => $loc->latitude,
+                'longitude' => $loc->longitude,
+                'place_around' => $loc->place_around,
+                'water_level' => $loc->water_level,
+                'tool' => $loc->tool,
+                'tool_detail' => $loc->tool_detail,
+                'note' => $loc->note,
+                'image' => $loc->images,  // ความสัมพันธ์กับ images
+            ];
+        });
+
+        echo json_encode($result);
     }
 
     public function getImage($code=0) {
@@ -57,4 +89,26 @@ class floodmark24Controller extends Controller
         // dd($image[0]['image_path']);
         return view('genImage.genPNG',compact('data','image'));      
     }
+
+    public function updateFloodmarkClass()
+{
+    $ranges = [
+        [0, 50, 1],
+        [50, 100, 2],
+        [100, 150, 3],
+        [150, 200, 4],
+        [200, 400, 5],
+    ];
+
+    foreach ($ranges as $range) {
+        [$lower, $upper, $class] = $range;
+
+        FloodMark::where('water_level', '>', $lower)
+                 ->where('water_level', '<=', $upper)
+                 ->update(['class' => $class]);
+    }
+
+    return response()->json(['message' => 'Floodmark class updated successfully']);
 }
+}
+

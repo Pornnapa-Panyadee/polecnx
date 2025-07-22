@@ -79,3 +79,7 @@ Route::get('/flood24/admin', function () {
 })->middleware('guest');
 
 
+//update class
+
+Route::get('/class', 'App\Http\Controllers\floodmark24Controller@updateFloodmarkClass');
+
