@@ -150,7 +150,7 @@
         100% { transform: rotate(360deg); }
       }
     </style>
-  
+
 
   </head>
 
@@ -236,11 +236,11 @@
                                   <center>เครื่องหมายระดับน้ำท่วมเขตตัวเมืองเชียงใหม่ ปี 2567 (CM Flood Mark 2024)
                                   <p>โดย มหาวิทยาลัยเชียงใหม่</p></center><hr>
                                 </div>
-                                
+
                               </div>
                               <div class="row">
                                 <div class="col-md-12 col-xl-2">
-                                  
+
                                   <font class="texth">
                                     <center><b>เครื่องหมายระดับน้ำท่วม (Flood Mark)</b> </center>
                                   </font>
@@ -255,13 +255,13 @@
                                      <br>
                                     <img  src="{{ asset('images/icon/flood_ref1.png') }}" width=100%  >  
                                   </center>
-                                  
+
                                   </p>
                                 </div>
-                                
-                                
+
+
                                 <div class="col-md-12 col-xl-10">
-                                  
+
                                   <!-- Map Show -->
                                   <div class="card-block p-b-0">
                                     <div align="right" > 
@@ -271,17 +271,17 @@
                                     <center><img  src="{{ asset('images/icon/refflood24_1.png') }}" width=50%  ></center>
                                   </div>
                                   <!-- End Map show -->
-                                   
+
                                 </div>
                               </div>
-                              
-                                                          
+
+
                             </div>
                           </div>
                         </div>
                       </div>
-                     
-                      
+
+
                        <!-- table -->
                       <div class="card">
                         <div class="card-block">
@@ -289,7 +289,7 @@
                             <div class="col-lg-12 col-xl-12">
                               <div class="sub-title"><h4>ตารางแสดงรายละเอียดเครื่องหมายระดับน้ำท่วมเมืองเชียงใหม่ เดือนตุลาคม พ.ศ.2567 </h4> </div>
                               <!-- choose Amp -->
-                                
+
                               <br>
                                 <!-- table -->
                                 <div id="tableData">
@@ -324,14 +324,14 @@
                                           </td>
                                         </tr>
                                       <?php }?>
-                                        
+
                                       </tbody>
                                     </table>
-                                    
+
                                   </div>
                                 </div>     
                             </div>
-                                                                                    
+
                           </div>
                         </div>
                       </div>
@@ -339,11 +339,11 @@
                     </div>
                   </div>
 
-                  
+
                 </div>
               </div>
 
-             
+
             </div>  
           </div>
           @include('menu.foot')
@@ -351,8 +351,8 @@
 
       </div>
     </div>
-    
-    
+
+
     <script src="{{ asset('js/form/jquery.min.js')}}"></script>
     <script src="{{ asset('js/form/jquery-ui.min.js')}}"></script>
     <script src="{{ asset('js/form/bootstrap.min.js')}}"></script>
@@ -361,7 +361,7 @@
     <script src="{{ asset('js/form/menu-hori-fixed.js')}}" ></script>
     <script src="{{ asset('js/form/jquery.mcustomscrollbar.concat.min.js')}}" ></script>
     <script src="{{ asset('js/form/script.js')}}"></script>
-  
+
     <script src="{{ asset('js/form/jquery.datatables.min.js')}}" ></script>
     <script src="{{ asset('js/form/datatables.buttons.min.js')}}" ></script>
 
@@ -392,37 +392,37 @@
         }
       }
     </script>
-    
+
     <!-- Map script -->
     <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css')}}" crossorigin=""/>
     <script src="{{ asset('/js/L.Control.Layers.Tree.js')}}"></script>
 
     <script type="text/javascript">
       
-      const  station1 = new L.LayerGroup();
-      const  station2 = new L.LayerGroup();
-      const  station3 = new L.LayerGroup();
-      const  station4 = new L.LayerGroup();
-      const  station5 = new L.LayerGroup();
+      var station1 = new L.LayerGroup();
+      var station2 = new L.LayerGroup();
+      var station3 = new L.LayerGroup();
+      var station4 = new L.LayerGroup();
+      var station5 = new L.LayerGroup();
     
-      const  cnx= new L.LayerGroup();
-      const  lpn= new L.LayerGroup();
+      var cnx= new L.LayerGroup();
+      var lpn= new L.LayerGroup();
 
-      const  x = 18.787563; 
-      const  y = 99.003968;
-      const  mbAttr = 'Chiang Mai ',
+      var x = 18.787563; 
+      var y = 99.003968;
+      var mbAttr = 'Chiang Mai ',
           mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFucGFueWEiLCJhIjoiY2loZWl5ZnJ4MGxnNHRwbHp5bmY4ZnNxOCJ9.IooQB0jYS_4QZvIq7gkjeQ';
           osm = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
               maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
           osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
-      const  map = L.map('map', {
+      var map = L.map('map', {
           layers: [osm,station1,station2,station3,station4,station5,cnx,lpn],
           center: [x,y],
           zoom: 13,
         });
 
-      const  pin = L.icon({
+      var pin = L.icon({
           iconUrl: '{{ asset('images/icon/flood2.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
           iconSize: [30, 35],
@@ -430,28 +430,28 @@
           popupAnchor: [-10, 0]
         });
       
-      const  pin_red = L.icon({
+      var pin_red = L.icon({
           iconUrl: '{{ asset('images/icon/flood_red.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_red.png') }}',
           iconSize: [30, 35],
           iconAnchor: [25, 0],
           popupAnchor: [-10, 0]
         });
-      const  pin_orange = L.icon({
+      var pin_orange = L.icon({
           iconUrl: '{{ asset('images/icon/flood_orange.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_orange.png') }}',
           iconSize: [30, 35],
           iconAnchor: [25, 0],
           popupAnchor: [-10, 0]
         });
-      const  pin_yellow = L.icon({
+      var pin_yellow = L.icon({
           iconUrl: '{{ asset('images/icon/flood_yellow.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_yellow.png') }}',
           iconSize: [30, 35],
           iconAnchor: [25, 0],
           popupAnchor: [-10, 0]
         });
-      const  pin_green = L.icon({
+      var pin_green = L.icon({
           iconUrl: '{{ asset('images/icon/flood_green.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_green.png') }}',
           iconSize: [30, 35],
@@ -459,7 +459,7 @@
           popupAnchor: [-10, 0]
         });
 
-      const  pin_purple = L.icon({
+      var pin_purple = L.icon({
           iconUrl: '{{ asset('images/icon/flood_purple.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_purple.png') }}',
           iconSize: [30, 35],
@@ -468,35 +468,35 @@
         });
 
 
-      const  pinMO_red = L.icon({
+      var pinMO_red = L.icon({
           iconUrl: '{{ asset('images/icon/flood_red.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_red.png') }}',
           iconSize: [15, 20],
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
-      const  pinMO_orange = L.icon({
+      var pinMO_orange = L.icon({
           iconUrl: '{{ asset('images/icon/flood_orange.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_orange.png') }}',
           iconSize: [15, 20],
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
-      const  pinMO_yellow = L.icon({
+      var pinMO_yellow = L.icon({
           iconUrl: '{{ asset('images/icon/flood_yellow.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_yellow.png') }}',
           iconSize: [15, 20],
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
-      const  pinMO_green = L.icon({
+      var pinMO_green = L.icon({
           iconUrl: '{{ asset('images/icon/flood_green.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_green.png') }}',
           iconSize: [15, 20],
           iconAnchor: [5, 30],
           popupAnchor: [0, 0]
         });
-      const  pinMO_purple = L.icon({
+      var pinMO_purple = L.icon({
           iconUrl: '{{ asset('images/icon/flood_purple.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood_purple.png') }}',
           iconSize: [15, 20],
@@ -505,7 +505,7 @@
         });
       
         
-      const  pinMO = L.icon({
+      var pinMO = L.icon({
           iconUrl: '{{ asset('images/icon/flood2.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
           iconSize: [15, 20],
@@ -531,100 +531,92 @@
         }
       }
 
-      const stationLayers = {
-        1: station1, 2: station2, 3: station3, 4: station4,5: station5
-      };
-
-      const icon_pin = [pin, pin_green, pin_yellow, pin_orange, pin_red, pin_purple];
-      const icon_pinMO = [pinMO, pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red, pinMO_purple];
-
       
-      async function loadAllData(mo) {
-        for (let pi = 1; pi <= 5; pi++) {
-          const url = `{{ asset('flood24/getDataSurveyLevel') }}/${pi}`;
-          try {
-            const data = await fetch(url).then(res => res.json());
-
-            data.forEach(item => {
-              const x = item.latitude;
-              const y = item.longitude;
-              const text = `
-                <div class='leaflet-popup-content'>
-                  <font style="font-family: 'Mitr';" size="3" color="#1AA90A"> หมายเลขหลัก : ${item.code}</font><br>
-                  <font style="font-family: 'Mitr';" size="2" color="#466DF3"> บริเวณที่ตั้ง : ${item.place_detail}</font><br>
-                  <font style="font-family: 'Mitr';" size="2" color="#466DF3"> ระดับน้ำท่วม : ${item.water_level} เซนติเมตร</font><br>
-                  <font style="font-family: 'Mitr';" size="2" color="#466DF3"> โครงสร้างที่ทำเครื่องหมาย : ${checkname(item.tool)} ${checkname(item.tool_detail)}</font><br>
-                  <br>
-                  <table align="center">
-                    <tr>
-                      <td>
-                        <a href='{{ asset('/flood24/image') }}/${item.code}' target="_blank">
-                          <button class="btn btn-primary btn-sm waves-effect waves-light"><i class="feather icon-image"></i> ภาพประกอบ</button>
-                        </a>
-                      </td>
-                      <td>
-                        <a href='https://maps.google.com/?q=${x},${y}' target="_blank">
-                          <button class="btn btn-primary btn-sm waves-effect waves-light"><i class="feather icon-map-pin"></i> ขอเส้นทาง</button>
-                        </a>
-                      </td>
-                    </tr>
-                  </table>
-                </div>`;
-
-              // เลือกไอคอน
-              const icon = mo === 0 ? icon_pinMO[pi % icon_pinMO.length] : icon_pin[pi % icon_pin.length];
-              L.marker([x, y], { icon: icon }).addTo(stationLayers[pi]).bindPopup(text);
-            });
-
-          } catch (error) {
-            console.error("Error loading data for layer " + pi, error);
-          }
-        }
+      function addPin(ampName,mo,pi){
+        $.getJSON("{{ asset('flood24/getDataSurveyLevel') }}"+"/"+pi, 
+          function (data){
+            const icon_pin = [pin,pin_green, pin_yellow, pin_orange, pin_red,pin_purple]; // Use actual icon objects
+            const icon_pinMO = [pinMO,pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red,pinMO_purple]; // Use actual icon objects
+            let pin_2;
+            
+            for (i=0;i<data.length;i++){
+              
+              var x=data[i].latitude;
+              var y=data[i].longitude;
+              var text ="<div class='leaflet-popup-content'> <font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > หมายเลขหลัก : " + data[i].code + "</font><br>";
+                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > บริเวณที่ตั้ง : "+ data[i].place_detail+"</font><br>";
+                  text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ระดับน้ำท่วม : "+ data[i].water_level+" เซนติเมตร</font><br>";
+                  text3 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > โครงสร้างที่ทำเครื่องหมาย : "+ checkname(data[i].tool) +" "+ checkname(data[i].tool_detail)+ "</font><br>";
+                  // text3 = '<br><img src="{{ asset('') }}' + data[i].image[0].image_path + '" width="100%" >';
+                  text4 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/flood24/image') }}/"+data[i].code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>"+"</td><td> <a href='https://maps.google.com/?q="+data[i].latitude+","+data[i].longitude+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
+            if(mo==0){
+                pin_2 = icon_pinMO[pi % icon_pin.length];
+                L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3+text4);  
+              }else{
+                pin_2 = icon_pin[pi % icon_pin.length];
+                L.marker([x,y],{icon: pin_2}).addTo(ampName).bindPopup(text+text1+text2+text3+text4);  
+              }
+            }//end for
+          });      
+                
       }
+      var mx = window.matchMedia("(max-width: 450px)");
+      if(mx.matches){
+        mo=0;
+        // alert(x.matches);
+      }else{
+        mo=1;
+      }      
       
-      let mo = window.matchMedia("(max-width: 450px)").matches ? 0 : 1;
-      loadAllData(mo);  
+      
+      addPin(station2,mo,3);
+      addPin(station3,mo,2);
+      addPin(station4,mo,1);
+      addPin(station1,mo,4);
+      addPin(station5,mo,5);
 
-      const baseTree = {
+      var baseTree = {
           label: 'BaseLayers',
           noShow: true,
           children: [  {label: ' แผนที่ภูมิประเทศ (Streets)', layer: osm},
                        {label: ' แผนที่ภาพถ่ายผ่านดาวเทียม (Satellite)', layer: osmBw},
           ]
         };
-      const ctl = L.control.layers.tree(baseTree, null);
+      var ctl = L.control.layers.tree(baseTree, null);
       ctl.addTo(map).collapseTree().expandSelected();
 
-      const overlays = [
-        {
-          label: ' ช่วงความสูงระดับน้ำท่วม',
-          selectAllCheckbox: true,
-          children: [
-            { label: " 0 - 50 ซม.", layer: station4 },
-            { label: " 50 - 100 ซม.", layer: station3 },
-            { label: " 100 - 150 ซม.", layer: station2 },
-            { label: " 150 - 200 ซม.", layer: station1 },
-            { label: " > 200 ซม.", layer: station5 },
-          ]
-        },
-        {
-          label: ' พื้นที่น้ำท่วม (ต.ค. 2567',
-          selectAllCheckbox: true,
-          children: [
-            { label: " จ.เชียงใหม่", layer: cnx },
-            { label: " จ.ลำพูน", layer: lpn }
-      
-          ]
-        }
-      ];
+      var overlays = [
+      {
+        label: ' ช่วงความสูงระดับน้ำท่วม',
+        selectAllCheckbox: true,
+        children: [
+          { label: " 0 - 50 ซม.", layer: station4 },
+          { label: " 50 - 100 ซม.", layer: station3 },
+          { label: " 100 - 150 ซม.", layer: station2 },
+          { label: " 150 - 200 ซม.", layer: station1 },
+          { label: " > 200 ซม.", layer: station5 },
+        ]
+      },
+      {
+        label: ' พื้นที่น้ำท่วม (ต.ค. 2567',
+        selectAllCheckbox: true,
+        children: [
+          { label: " จ.เชียงใหม่", layer: cnx },
+          { label: " จ.ลำพูน", layer: lpn }
+    
+        ]
+      }
+    ];
 
-      // ใส่ overlay ทั้งหมดในครั้งเดียว
-      ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
+    // ใส่ overlay ทั้งหมดในครั้งเดียว
+    ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
 
     
+
+
     </script>
 
-  
+
     <!-- End Map  -->
   </body>
 
