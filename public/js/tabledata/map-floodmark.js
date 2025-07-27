@@ -117,7 +117,7 @@ $(function () {
     let mo = window.matchMedia("(max-width: 450px)").matches ? 0 : 1;
     loadAllData(mo);
 
-    console.log('เริ่มสร้างแผนที่');
+
     const baseTree = {
         label: 'BaseLayers',
         noShow: true,

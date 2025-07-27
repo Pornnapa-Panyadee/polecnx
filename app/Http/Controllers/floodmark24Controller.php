@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\FloodMark; 
 use App\Models\ImageFloodmark; 
+use DataTables;
 
 class floodmark24Controller extends Controller
 {
@@ -14,6 +15,28 @@ class floodmark24Controller extends Controller
         // $data = FloodMark::select('*')->get();
         // dd($pole[0]->pole_id);
         return view('floodmark24.table',compact('data'));      
+    }
+
+    public function getTabletest() {
+        $data = FloodMark::select('*')->get();
+        return view('floodmark24.test',compact('data'));      
+    }
+    public function getDataTable(Request $request)
+    {
+        $data = FloodMark::select('*');
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('coordinate', function($row){
+                return number_format($row->latitude, 4) . ',' . number_format($row->longitude, 4);
+            })
+            ->addColumn('image', function($row){
+                return '<a href="'.url('/flood24/image/'.$row->code).'" class="btn btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>';
+            })
+            ->addColumn('map', function($row){
+                return '<a href="https://maps.google.com/?q='.$row->latitude.','.$row->longitude.'" class="btn btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>เส้นทาง</a>';
+            })
+            ->rawColumns(['image', 'map'])
+            ->make(true); // ← ต้องมีบรรทัดนี้
     }
 
     // public function getDataSurveyLevel($level=0) {

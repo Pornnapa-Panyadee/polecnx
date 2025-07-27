@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    console.log('Initialize DataTable');
+    // console.log('Initialize DataTable');
 
     if ($.fn.DataTable.isDataTable('#fix-header')) {
-        console.log('Destroy existing DataTable');
+        // console.log('Destroy existing DataTable');
         $('#fix-header').DataTable().clear().destroy();
     }
 
