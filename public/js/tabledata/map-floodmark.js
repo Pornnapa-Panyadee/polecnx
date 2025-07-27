@@ -203,7 +203,7 @@ function loadAllData(mo = 1) {
     for (let level = 1; level <= 5; level++) {
         const layer = stationLayers[level];
         // const url = `/flood24/getDataSurveyLevel/${level}`; // อย่าใช้ {{ }} ถ้าอยู่นอก Blade
-        const url = `/flood24/getDataSurveyLevel/${level}`;
+        const url = `/getDataSurveyLevelVer1/${level}`;
 
         $.ajax({
             url: url,
