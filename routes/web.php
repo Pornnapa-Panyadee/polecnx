@@ -24,11 +24,12 @@ Route::get('/floodmap', function () { return view('guest.floodmap');});
 
 // Route::get('/flood24', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
 Route::prefix('/flood24')->group(function () {
+    Route::get('/test', 'App\Http\Controllers\floodmark24Controller@getTabletest');
+    Route::get('/table/data', 'App\Http\Controllers\floodmark24Controller@getDataTable')->name('floodmark24.table.data');
     // Route::get('/', function () { return view('floodmark24.underconstruction');})->name('home.flood24');
     Route::get('/', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
     Route::get('/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
     Route::get('/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
-    Route::get('/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
     Route::get('/successupload', function () { return view('form.result');});
 
 });
