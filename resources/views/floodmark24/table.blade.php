@@ -216,7 +216,7 @@
       <!-- <div class="pcoded-overlay-box"></div> -->
       @include('menu.header')
       <!-- @include('menu.header_pole') -->
-      <!-- @include('menu.slidebar') -->
+      @include('menu.slidebar')
       <div class="pcoded-container navbar-wrapper">
         <div class="pcoded-main-container">
           <div class="pcoded-wrapper">
@@ -281,57 +281,37 @@
                         </div>
                       </div>
 
-
-                       <!-- table -->
+                      <!-- table -->
                       <div class="card">
                         <div class="card-block">
                           <div class="row">
                             <div class="col-lg-12 col-xl-12">
                               <div class="sub-title"><h4>ตารางแสดงรายละเอียดเครื่องหมายระดับน้ำท่วมเมืองเชียงใหม่ เดือนตุลาคม พ.ศ.2567 </h4> </div>
                               <!-- choose Amp -->
-
+                                
                               <br>
                                 <!-- table -->
                                 <div id="tableData">
                                   <div class="dt-responsive table-responsive">
-                                    <table id="fix-header" class="table table-striped table-bordered nowrap" width=80% align="center">
-                                      <thead>
-                                        <tr>
-                                          <th width=5%>#</th>
-                                          <th width=10%>รหัส</th>
-                                          <th width=10%>โครงสร้างที่ทำเครื่องหมาย</th>
-                                          <th width=15%>ตำแหน่งที่ตั้ง</th>
-                                          <th width=15%>พิกัด</th>
-                                          <th width=10%>ระดับน้ำท่วม (ซม.)</th>
-                                          <th width=10%>รูป</th>
-                                          <th width=5%>เส้นทาง</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>     
-                                      <?php for($i = 0;$i < count($data);$i++){  ?>
-                                        <tr align="center">
-                                          <td>{{$i+1}} </td>
-                                          <td> {{$data[$i]['code']}} </td>
-                                          <td >{{$data[$i]['tool']}}</td>
-                                          <td>{{$data[$i]['place_detail']}}</td>
-                                          <td>{{ number_format($data[$i]['latitude'], 4) }},{{ number_format($data[$i]['longitude'], 4) }} </td>
-                                          <td>{{$data[$i]['water_level']}}</td>
-                                          <td>
-                                            <a href="{{ url('/flood24/image')}}/{{$data[$i]['code']}}" class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
-                                          </td>
-                                          <td> 
-                                            <a href='https://maps.google.com/?q={{$data[$i]['latitude']}},{{$data[$i]['longitude']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>เส้นทาง</a>
-                                          </td>
-                                        </tr>
-                                      <?php }?>
-
-                                      </tbody>
-                                    </table>
-
+                                      <table id="fix-header" class="table table-striped table-bordered nowrap" width="80%" align="center">
+                                        <thead>
+                                          <tr>
+                                            <th>#</th>
+                                            <th>รหัส</th>
+                                            <th>โครงสร้างที่ทำเครื่องหมาย</th>
+                                            <th>ตำแหน่งที่ตั้ง</th>
+                                            <th>พิกัด</th>
+                                            <th>ระดับน้ำท่วม (ซม.)</th>
+                                            <th>รูป</th>
+                                            <th>เส้นทาง</th>
+                                          </tr>
+                                        </thead>
+                                      </table>          
+                                    
                                   </div>
                                 </div>     
                             </div>
-
+                                                                                    
                           </div>
                         </div>
                       </div>
@@ -353,271 +333,60 @@
     </div>
 
 
-    <script src="{{ asset('js/form/jquery.min.js')}}"></script>
-    <script src="{{ asset('js/form/jquery-ui.min.js')}}"></script>
-    <script src="{{ asset('js/form/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('js/form/jquery-i18next.min.js')}}" ></script>
-    <script src="{{ asset('js/form/pcoded.min.js')}}" ></script>
-    <script src="{{ asset('js/form/menu-hori-fixed.js')}}" ></script>
-    <script src="{{ asset('js/form/jquery.mcustomscrollbar.concat.min.js')}}" ></script>
-    <script src="{{ asset('js/form/script.js')}}"></script>
+    <script src="{{ asset('js/form/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/form/jquery-ui.min.js') }}"></script>
 
-    <script src="{{ asset('js/form/jquery.datatables.min.js')}}" ></script>
-    <script src="{{ asset('js/form/datatables.buttons.min.js')}}" ></script>
+    <script src="{{ asset('js/form/bootstrap.min.js') }}"></script>
 
-    <script src="{{ asset('js/form/datatables.fixedheader.min.js')}}"></script>
+    <!-- jQuery Plugins -->
+    <script src="{{ asset('js/form/jquery-i18next.min.js') }}"></script>
+    <script src="{{ asset('js/form/jquery.mcustomscrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('js/form/jquery.slimscroll.js') }}"></script>
 
-    <script src="{{ asset('js/form/datatables.colreorder.min.js')}}" ></script>
-    <script src="{{ asset('js/form/buttons.print.min.js')}}" ></script>
-    <script src="{{ asset('js/form/datatables.bootstrap4.min.js')}}" ></script>
-    <script src="{{ asset('js/form/datatables.responsive.min.js')}}" ></script>
-    <script src="{{ asset('js/form/responsive.bootstrap4.min.js')}}"></script>
+    <!-- Layout Scripts -->
+    <script src="{{ asset('js/form/pcoded.min.js') }}"></script>
+    <script src="{{ asset('js/form/menu-hori-fixed.js') }}"></script>
+    <script src="{{ asset('js/form/script.js') }}"></script>
 
-    <script src= "{{ asset('js/form/fixed-header-custom.js') }}"></script>
+    <!-- Optional Plugin -->
+    {{-- Uncomment if needed --}}
+    {{-- <script src="https://unpkg.com/node-waves/dist/waves.min.js"></script> --}}
 
-    <script src= "{{ asset('js/form/pcoded.min.js') }}"></script>
-    <script src= "{{ asset('js/form/jquery.mcustomscrollbar.concat.min.js') }}"></script>
+    <!-- DataTables -->
+    <script src="{{ asset('js/form/jquery.datatables.min.js') }}"></script>
+    <script src="{{ asset('js/form/datatables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/form/datatables.responsive.min.js') }}"></script>
+    <script src="{{ asset('js/form/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/form/datatables.buttons.min.js') }}"></script>
+    <script src="{{ asset('js/form/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('js/form/datatables.fixedheader.min.js') }}"></script>
+    <script src="{{ asset('js/form/datatables.colreorder.min.js') }}"></script>
 
-    <script src= "{{ asset('js/form/script.js') }}"></script>
+    <!-- Loading overlay -->
     <script>
       window.onload = function() {
         var loader = document.getElementById('loadingOverlay');
         if(loader) {
-          // ค่อยๆ ลดความทึบ (fade out) ก่อนซ่อน
           loader.style.transition = "opacity 0.5s ease";
           loader.style.opacity = 0;
           setTimeout(function() {
             loader.style.display = 'none';
-          }, 500); // รอให้ fade out เสร็จก่อนซ่อนจริง
+          }, 500);
         }
       }
     </script>
+
+    <!-- Floodmark Data -->
+    <script>
+      var floodmarkTableUrl = "{{ route('floodmark24.table.data') }}";
+    </script>
+    <script src="{{ asset('js/tabledata/floodmark.js') }}"></script>
 
     <!-- Map script -->
-    <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css')}}" crossorigin=""/>
-    <script src="{{ asset('/js/L.Control.Layers.Tree.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css') }}" crossorigin=""/>
+    <script src="{{ asset('js/L.Control.Layers.Tree.js') }}"></script>
+    <script src="{{ asset('js/tabledata/map-floodmark.js') }}"></script>
 
-    <script type="text/javascript">
-      
-      var station1 = new L.LayerGroup();
-      var station2 = new L.LayerGroup();
-      var station3 = new L.LayerGroup();
-      var station4 = new L.LayerGroup();
-      var station5 = new L.LayerGroup();
-    
-      var cnx= new L.LayerGroup();
-      var lpn= new L.LayerGroup();
-
-      var x = 18.787563; 
-      var y = 99.003968;
-      var mbAttr = 'Chiang Mai ',
-          mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFucGFueWEiLCJhIjoiY2loZWl5ZnJ4MGxnNHRwbHp5bmY4ZnNxOCJ9.IooQB0jYS_4QZvIq7gkjeQ';
-          osm = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-              maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
-          osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
-                maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
-      var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,station5,cnx,lpn],
-          center: [x,y],
-          zoom: 13,
-        });
-
-      var pin = L.icon({
-          iconUrl: '{{ asset('images/icon/flood2.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
-          iconSize: [30, 35],
-          iconAnchor: [10, 0],
-          popupAnchor: [-10, 0]
-        });
-      
-      var pin_red = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_red.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_red.png') }}',
-          iconSize: [30, 35],
-          iconAnchor: [25, 0],
-          popupAnchor: [-10, 0]
-        });
-      var pin_orange = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_orange.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_orange.png') }}',
-          iconSize: [30, 35],
-          iconAnchor: [25, 0],
-          popupAnchor: [-10, 0]
-        });
-      var pin_yellow = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_yellow.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_yellow.png') }}',
-          iconSize: [30, 35],
-          iconAnchor: [25, 0],
-          popupAnchor: [-10, 0]
-        });
-      var pin_green = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_green.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_green.png') }}',
-          iconSize: [30, 35],
-          iconAnchor: [25, 0],
-          popupAnchor: [-10, 0]
-        });
-
-      var pin_purple = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_purple.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_purple.png') }}',
-          iconSize: [30, 35],
-          iconAnchor: [25, 0],
-          popupAnchor: [-10, 0]
-        });
-
-
-      var pinMO_red = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_red.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_red.png') }}',
-          iconSize: [15, 20],
-          iconAnchor: [5, 30],
-          popupAnchor: [0, 0]
-        });
-      var pinMO_orange = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_orange.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_orange.png') }}',
-          iconSize: [15, 20],
-          iconAnchor: [5, 30],
-          popupAnchor: [0, 0]
-        });
-      var pinMO_yellow = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_yellow.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_yellow.png') }}',
-          iconSize: [15, 20],
-          iconAnchor: [5, 30],
-          popupAnchor: [0, 0]
-        });
-      var pinMO_green = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_green.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_green.png') }}',
-          iconSize: [15, 20],
-          iconAnchor: [5, 30],
-          popupAnchor: [0, 0]
-        });
-      var pinMO_purple = L.icon({
-          iconUrl: '{{ asset('images/icon/flood_purple.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood_purple.png') }}',
-          iconSize: [15, 20],
-          iconAnchor: [5, 30],
-          popupAnchor: [0, 0]
-        });
-      
-        
-      var pinMO = L.icon({
-          iconUrl: '{{ asset('images/icon/flood2.png') }}',
-          iconRetinaUrl:'{{ asset('images/icon/flood2.png') }}',
-          iconSize: [15, 20],
-          iconAnchor: [5, 30],
-          popupAnchor: [0, 0]
-        });
-
-        omnivore.kml('kml/CNX.kml').on('ready', function () {
-            this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
-        }).addTo(cnx);
-
-        omnivore.kml('kml/LPN.kml').on('ready', function () {
-            this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
-        }).addTo(lpn);
-
-      
-           
-     function checkname(name){
-        if(name!=null){
-          return name;
-        }else{
-          return " ";
-        }
-      }
-
-      
-      function addPin(ampName,mo,pi){
-        $.getJSON("{{ asset('flood24/getDataSurveyLevel') }}"+"/"+pi, 
-          function (data){
-            const icon_pin = [pin,pin_green, pin_yellow, pin_orange, pin_red,pin_purple]; // Use actual icon objects
-            const icon_pinMO = [pinMO,pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red,pinMO_purple]; // Use actual icon objects
-            let pin_2;
-            
-            for (i=0;i<data.length;i++){
-              
-              var x=data[i].latitude;
-              var y=data[i].longitude;
-              var text ="<div class='leaflet-popup-content'> <font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > หมายเลขหลัก : " + data[i].code + "</font><br>";
-                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > บริเวณที่ตั้ง : "+ data[i].place_detail+"</font><br>";
-                  text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ระดับน้ำท่วม : "+ data[i].water_level+" เซนติเมตร</font><br>";
-                  text3 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > โครงสร้างที่ทำเครื่องหมาย : "+ checkname(data[i].tool) +" "+ checkname(data[i].tool_detail)+ "</font><br>";
-                  // text3 = '<br><img src="{{ asset('') }}' + data[i].image[0].image_path + '" width="100%" >';
-                  text4 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/flood24/image') }}/"+data[i].code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>"+"</td><td> <a href='https://maps.google.com/?q="+data[i].latitude+","+data[i].longitude+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
-            if(mo==0){
-                pin_2 = icon_pinMO[pi % icon_pin.length];
-                L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3+text4);  
-              }else{
-                pin_2 = icon_pin[pi % icon_pin.length];
-                L.marker([x,y],{icon: pin_2}).addTo(ampName).bindPopup(text+text1+text2+text3+text4);  
-              }
-            }//end for
-          });      
-                
-      }
-      var mx = window.matchMedia("(max-width: 450px)");
-      if(mx.matches){
-        mo=0;
-        // alert(x.matches);
-      }else{
-        mo=1;
-      }      
-      
-      
-      addPin(station2,mo,3);
-      addPin(station3,mo,2);
-      addPin(station4,mo,1);
-      addPin(station1,mo,4);
-      addPin(station5,mo,5);
-
-      var baseTree = {
-          label: 'BaseLayers',
-          noShow: true,
-          children: [  {label: ' แผนที่ภูมิประเทศ (Streets)', layer: osm},
-                       {label: ' แผนที่ภาพถ่ายผ่านดาวเทียม (Satellite)', layer: osmBw},
-          ]
-        };
-      var ctl = L.control.layers.tree(baseTree, null);
-      ctl.addTo(map).collapseTree().expandSelected();
-
-      var overlays = [
-      {
-        label: ' ช่วงความสูงระดับน้ำท่วม',
-        selectAllCheckbox: true,
-        children: [
-          { label: " 0 - 50 ซม.", layer: station4 },
-          { label: " 50 - 100 ซม.", layer: station3 },
-          { label: " 100 - 150 ซม.", layer: station2 },
-          { label: " 150 - 200 ซม.", layer: station1 },
-          { label: " > 200 ซม.", layer: station5 },
-        ]
-      },
-      {
-        label: ' พื้นที่น้ำท่วม (ต.ค. 2567',
-        selectAllCheckbox: true,
-        children: [
-          { label: " จ.เชียงใหม่", layer: cnx },
-          { label: " จ.ลำพูน", layer: lpn }
-    
-        ]
-      }
-    ];
-
-    // ใส่ overlay ทั้งหมดในครั้งเดียว
-    ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
-
-    
-
-
-    </script>
-
-
-    <!-- End Map  -->
   </body>
 
 </html>
