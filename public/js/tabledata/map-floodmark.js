@@ -1,36 +1,36 @@
 
 const pin_red = L.icon({
-    iconUrl: '../images/icon/flood_red.png',
-    iconRetinaUrl: '../images/icon/flood_red.png',
+    iconUrl: '/images/icon/flood_red.png',
+    iconRetinaUrl: '/images/icon/flood_red.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 const pin_orange = L.icon({
-    iconUrl: '../images/icon/flood_orange.png',
-    iconRetinaUrl: '../images/icon/flood_orange.png',
+    iconUrl: '/images/icon/flood_orange.png',
+    iconRetinaUrl: '/images/icon/flood_orange.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 const pin_yellow = L.icon({
-    iconUrl: '../images/icon/flood_yellow.png',
-    iconRetinaUrl: '../images/icon/flood_yellow.png',
+    iconUrl: '/images/icon/flood_yellow.png',
+    iconRetinaUrl: '/images/icon/flood_yellow.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 const pin_green = L.icon({
-    iconUrl: '../images/icon/flood_green.png',
-    iconRetinaUrl: '../images/icon/flood_green.png',
+    iconUrl: '/images/icon/flood_green.png',
+    iconRetinaUrl: '/images/icon/flood_green.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 
 const pin_purple = L.icon({
-    iconUrl: '../images/icon/flood_purple.png',
-    iconRetinaUrl: '../images/icon/flood_purple.png',
+    iconUrl: '/images/icon/flood_purple.png',
+    iconRetinaUrl: '/images/icon/flood_purple.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
@@ -38,36 +38,36 @@ const pin_purple = L.icon({
 
 
 const pinMO_red = L.icon({
-    iconUrl: '../images/icon/flood_red.png',
-    iconRetinaUrl: '../images/icon/flood_red.png',
+    iconUrl: '/images/icon/flood_red.png',
+    iconRetinaUrl: '/images/icon/flood_red.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_orange = L.icon({
-    iconUrl: '../images/icon/flood_orange.png',
-    iconRetinaUrl: '../images/icon/flood_orange.png',
+    iconUrl: '/images/icon/flood_orange.png',
+    iconRetinaUrl: '/images/icon/flood_orange.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_yellow = L.icon({
-    iconUrl: '../images/icon/flood_yellow.png',
-    iconRetinaUrl: '../images/icon/flood_yellow.png',
+    iconUrl: '/images/icon/flood_yellow.png',
+    iconRetinaUrl: '/images/icon/flood_yellow.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_green = L.icon({
-    iconUrl: '../images/icon/flood_green.png',
-    iconRetinaUrl: '../images/icon/flood_green.png',
+    iconUrl: '/images/icon/flood_green.png',
+    iconRetinaUrl: '/images/icon/flood_green.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_purple = L.icon({
-    iconUrl: '../images/icon/flood_purple.png',
-    iconRetinaUrl: '../images/icon/flood_purple.png',
+    iconUrl: '/images/icon/flood_purple.png',
+    iconRetinaUrl: '/images/icon/flood_purple.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
@@ -89,11 +89,11 @@ const stationLayers = {
 const icon_pin = [pin_green, pin_green, pin_yellow, pin_orange, pin_red, pin_purple];
 const icon_pinMO = [pinMO_green, pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red, pinMO_purple];
 
-omnivore.kml('../kml/CNX.kml').on('ready', function () {
+omnivore.kml('/kml/CNX.kml').on('ready', function () {
     this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
 }).addTo(cnx);
 
-omnivore.kml('../kml/LPN.kml').on('ready', function () {
+omnivore.kml('/kml/LPN.kml').on('ready', function () {
     this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
 }).addTo(lpn);
 $(function () {
@@ -166,7 +166,7 @@ function buildPopup(item, x, y) {
         <table align="center">
           <tr>
             <td>
-              <a href="/flood24/report/${item.code}" target="_blank">
+              <a href="/cmflood/flood24/report/${item.code}" target="_blank">
                 <button class="btn btn-primary btn-sm waves-effect waves-light">
                   <i class="feather icon-image"></i> ภาพประกอบ
                 </button>
@@ -202,8 +202,8 @@ function loadAllData(mo = 1) {
 
     for (let level = 1; level <= 5; level++) {
         const layer = stationLayers[level];
-        // const url = `/flood24/getDataSurveyLevel/${level}`; // อย่าใช้ {{ }} ถ้าอยู่นอก Blade
-        const url = `/cmflood/getDataSurveyLevelVer1/${level}`;
+        const url = `/flood24/getDataSurveyLevel/${level}`; // อย่าใช้ {{ }} ถ้าอยู่นอก Blade
+        // const url = `/cmflood/getDataSurveyLevelVer1/${level}`;
 
         $.ajax({
             url: url,
