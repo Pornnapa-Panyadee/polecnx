@@ -30,7 +30,7 @@ class floodmark24Controller extends Controller
                 return number_format($row->latitude, 4) . ',' . number_format($row->longitude, 4);
             })
             ->addColumn('image', function($row){
-                return '<a href="'.url('/flood24/image/'.$row->code).'" class="btn btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>';
+                return '<a href="'.url('/flood24/report/'.$row->code).'" class="btn btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>';
             })
             ->addColumn('map', function($row){
                 return '<a href="https://maps.google.com/?q='.$row->latitude.','.$row->longitude.'" class="btn btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>เส้นทาง</a>';

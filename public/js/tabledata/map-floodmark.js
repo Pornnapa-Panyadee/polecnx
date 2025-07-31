@@ -166,7 +166,7 @@ function buildPopup(item, x, y) {
         <table align="center">
           <tr>
             <td>
-              <a href="/flood24/image/${item.code}" target="_blank">
+              <a href="/flood24/report/${item.code}" target="_blank">
                 <button class="btn btn-primary btn-sm waves-effect waves-light">
                   <i class="feather icon-image"></i> ภาพประกอบ
                 </button>
