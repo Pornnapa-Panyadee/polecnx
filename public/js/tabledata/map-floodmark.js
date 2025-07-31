@@ -89,11 +89,11 @@ const stationLayers = {
 const icon_pin = [pin_green, pin_green, pin_yellow, pin_orange, pin_red, pin_purple];
 const icon_pinMO = [pinMO_green, pinMO_green, pinMO_yellow, pinMO_orange, pinMO_red, pinMO_purple];
 
-omnivore.kml('/kml/CNX.kml').on('ready', function () {
+omnivore.kml('/cmflood/kml/CNX.kml').on('ready', function () {
     this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
 }).addTo(cnx);
 
-omnivore.kml('/kml/LPN.kml').on('ready', function () {
+omnivore.kml('/cmflood/kml/LPN.kml').on('ready', function () {
     this.setStyle({ fillOpacity: 0.5, color: "#3d98ff", weight: 0 });
 }).addTo(lpn);
 $(function () {
