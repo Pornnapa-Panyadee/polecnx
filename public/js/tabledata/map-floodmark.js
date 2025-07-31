@@ -1,36 +1,36 @@
 
 const pin_red = L.icon({
-    iconUrl: '/images/icon/flood_red.png',
-    iconRetinaUrl: '/images/icon/flood_red.png',
+    iconUrl: '/cmflood/images/icon/flood_red.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_red.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 const pin_orange = L.icon({
-    iconUrl: '/images/icon/flood_orange.png',
-    iconRetinaUrl: '/images/icon/flood_orange.png',
+    iconUrl: '/cmflood/images/icon/flood_orange.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_orange.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 const pin_yellow = L.icon({
-    iconUrl: '/images/icon/flood_yellow.png',
-    iconRetinaUrl: '/images/icon/flood_yellow.png',
+    iconUrl: '/cmflood/images/icon/flood_yellow.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_yellow.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 const pin_green = L.icon({
-    iconUrl: '/images/icon/flood_green.png',
-    iconRetinaUrl: '/images/icon/flood_green.png',
+    iconUrl: '/cmflood/images/icon/flood_green.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_green.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
 });
 
 const pin_purple = L.icon({
-    iconUrl: '/images/icon/flood_purple.png',
-    iconRetinaUrl: '/images/icon/flood_purple.png',
+    iconUrl: '/cmflood/images/icon/flood_purple.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_purple.png',
     iconSize: [30, 35],
     iconAnchor: [25, 0],
     popupAnchor: [-10, 0]
@@ -38,36 +38,36 @@ const pin_purple = L.icon({
 
 
 const pinMO_red = L.icon({
-    iconUrl: '/images/icon/flood_red.png',
-    iconRetinaUrl: '/images/icon/flood_red.png',
+    iconUrl: '/cmflood/images/icon/flood_red.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_red.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_orange = L.icon({
-    iconUrl: '/images/icon/flood_orange.png',
-    iconRetinaUrl: '/images/icon/flood_orange.png',
+    iconUrl: '/cmflood/images/icon/flood_orange.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_orange.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_yellow = L.icon({
-    iconUrl: '/images/icon/flood_yellow.png',
-    iconRetinaUrl: '/images/icon/flood_yellow.png',
+    iconUrl: '/cmflood/images/icon/flood_yellow.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_yellow.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_green = L.icon({
-    iconUrl: '/images/icon/flood_green.png',
-    iconRetinaUrl: '/images/icon/flood_green.png',
+    iconUrl: '/cmflood/images/icon/flood_green.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_green.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
 });
 const pinMO_purple = L.icon({
-    iconUrl: '/images/icon/flood_purple.png',
-    iconRetinaUrl: '/images/icon/flood_purple.png',
+    iconUrl: '/cmflood/images/icon/flood_purple.png',
+    iconRetinaUrl: '/cmflood/images/icon/flood_purple.png',
     iconSize: [15, 20],
     iconAnchor: [5, 30],
     popupAnchor: [0, 0]
