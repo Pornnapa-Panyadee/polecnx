@@ -153,8 +153,10 @@
                                   
                                   <!-- Map Show -->
                                   <div class="card-block p-b-0">
+                                    <!-- <p class="text-right">ระดับน้ำสูงสุดสถานี P.1 วันที่ 3 ต.ค 2565  ระดับ 4.650 (รสม.)  ระดับ 305.150 (รทก.)</p> -->
                                     <div id="map" style="border-style: groove;"></div>
                                     <br>
+                                    
                                     <center><img  src="{{ asset('images/icon/refmappole.png') }}" width=75% ></center>
                                   </div>
                                   <!-- End Map show -->
@@ -203,7 +205,7 @@
                                           <td align="center">{{$data[$i]['flood_level']}}  </td>
                                           <td align="center">{{$data[$i]['flood_max']}}</td>
                                           <td align="center" >  
-                                           <a href='{{ asset('/images/originals') }}/{{$data[$i]['pix']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
+                                           <a href='{{ asset('/images/originals2025') }}/{{$data[$i]['pix']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
                                           <td align="center" >  
                                            <a href='https://maps.google.com/?q={{$data[$i]['lat']}},{{$data[$i]['long']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>เส้นทาง</a>
                                             
@@ -335,8 +337,8 @@
               // alert (x);
               var text ="<div class='leaflet-popup-content'> <font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > หมายเลขหลัก : " + data[i].pole_id + "</font><br>";
                   text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > บริเวณที่ตั้ง : "+ data[i].pole_name+"</font><br>";
-                  text2 ='<img src="images/originals/'+data[i].pix+' " width="100%" >';
-                  text3 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/images/originals/') }}/"+data[i].pix+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>" +"</td><td > <a href='https://maps.google.com/?q="+data[i].lat+","+data[i].long+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
+                  text2 ='<img src="images/originals2025/'+data[i].pix+' " width="100%" >';
+                  text3 ="<br><table align=\"center\"><tr><td> <a href='{{ asset('/images/originals2025/') }}/"+data[i].pix+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a>" +"</td><td > <a href='https://maps.google.com/?q="+data[i].lat+","+data[i].long+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-map-pin\"></i> ขอเส้นทาง</button> </a></td></tr></table> </div>";
               if(mo==0){
                 L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3);  
               }else{

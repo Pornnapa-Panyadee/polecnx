@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PoleLocation;
+use App\Models\Pole2025Location;
 
 class PolelocationController extends Controller
 {
     public function getDataHomeTable() {
-        $data = PoleLocation::select('*')->get();
+        $data = Pole2025Location::select('*')->get();
         // dd($pole[0]->pole_id);
         return view('guest.pole',compact('data'));      
         
@@ -18,7 +19,7 @@ class PolelocationController extends Controller
 
     public function getDataSurvey($compass=0) {
         header('Access-Control-Allow-Origin: *');
-        $location = PoleLocation::select('*')->where('compass',$compass)->get();;
+        $location = Pole2025Location::select('*')->where('compass',$compass)->get();;
         //dd($location);
         for ($i=0;$i<count($location);$i++){ 
             $result[] = [
