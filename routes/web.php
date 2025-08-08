@@ -29,6 +29,7 @@ Route::prefix('/flood24')->group(function () {
     Route::get('/', 'App\Http\Controllers\floodmark24Controller@getTable')->name('home.flood24');
     Route::get('/getDataSurveyLevel/{level}', 'App\Http\Controllers\floodmark24Controller@getDataSurveyLevel')->name('flood24.getDataSurveyLevel');
     Route::get('/report/{code}', 'App\Http\Controllers\floodmark24Controller@getImage');
+     Route::get('/image/{code}', 'App\Http\Controllers\floodmark24Controller@getImagereport');
     Route::get('/successupload', function () { return view('form.result');});
 
 });
