@@ -133,10 +133,10 @@ $(function () {
             label: ' ช่วงความสูงระดับน้ำท่วม',
             selectAllCheckbox: true,
             children: [
-                { label: " 0 - 50 ซม.", layer: station4 },
-                { label: " 50 - 100 ซม.", layer: station3 },
-                { label: " 100 - 150 ซม.", layer: station2 },
-                { label: " 150 - 200 ซม.", layer: station1 },
+                { label: " 0 - 50 ซม.", layer: station1 },
+                { label: " 50 - 100 ซม.", layer: station2 },
+                { label: " 100 - 150 ซม.", layer: station3 },
+                { label: " 150 - 200 ซม.", layer: station4 },
                 { label: " > 200 ซม.", layer: station5 },
             ]
         },
