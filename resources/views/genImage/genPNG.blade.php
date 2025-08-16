@@ -223,7 +223,7 @@
                                                                                                 <td width=35% style="vertical-align: bottom;">ซม.</td>
                                                                                             </tr>
                                                                                         </table> -->
-                                                                                        &#9900; วันที่ถ่ายภาพ {{$data[0]['date_survey']}}
+                                                                                        <!-- &#9900; วันที่ถ่ายภาพ {{$data[0]['date_survey']}} -->
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
